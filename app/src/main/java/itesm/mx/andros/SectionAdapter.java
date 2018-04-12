@@ -21,8 +21,8 @@ public class SectionAdapter extends ArrayAdapter<Section> {
     ImageView ivImagen;
 
 
-    public SectionAdapter(Context context, ArrayList<Section> sections){
-        super(context, 0, sections);
+    public SectionAdapter(Context context, int resource, ArrayList<Section> sections){
+        super(context, resource, sections);
     }
 
 
