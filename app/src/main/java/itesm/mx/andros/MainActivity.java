@@ -1,8 +1,10 @@
 package itesm.mx.andros;
 
 import android.app.ListActivity;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 

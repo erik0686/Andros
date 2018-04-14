@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <array name="menuColors">
+        <item>#E8EAF6</item>
+        <item>#C5CAE8</item>
+        <item>#9EA8DB</item>
+        <item>#7986CC</item>
+        <item>#4A5CCC</item>
+        <item>#303E9F</item>
+    </array>
 </resources>
