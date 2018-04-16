@@ -60,14 +60,21 @@ public class SectionActivity extends AppCompatActivity {
     }
 
     public void displaySection(){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
         switch (numSection){
             case 0:
                 FragmentFormulario fragmentFormulario = FragmentFormulario.newInstance();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.main_content, fragmentFormulario, "TAG_SECCION" );
+                transaction.replace(R.id.main_content, fragmentFormulario, "FRAGMENT FORMULARIO" );
+                transaction.commit();
+                break;
+            case 5:
+                FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();
+                transaction.replace(R.id.main_content, fragmentInstrucciones, "FRAGMENT INSTRUCCIONES" );
                 transaction.commit();
                 break;
         }
+
     }
 
     @Override
