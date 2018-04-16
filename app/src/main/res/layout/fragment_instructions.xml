@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
@@ -7,9 +6,99 @@
     android:orientation="vertical"
     tools:context="itesm.mx.andros.SectionActivity$PlaceholderFragment">
 
-    <ImageView
-        android:id="@+id/formulario"
+    <LinearLayout
+        android:id="@+id/InstruccionFormulario"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tituloFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoFormulario"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tituloEjemplos"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoEjemplos"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tituloElementos"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoElementos"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tituloEcuaciones"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoEcuaciones"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tituloInnovacion"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoInnovacion"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+</ScrollView>

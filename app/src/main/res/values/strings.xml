@@ -8,4 +8,18 @@
     <string name="botonTransformarEcuacion">Transformar ecuación</string>
     <string name="hintEcuacionConvertida">Ecuacion convertida</string>
     <string name="EcuacionResultado">Resultado:</string>
+    <string name="InstruccionesFormulario">En esta seccion puedes encontrar las formulas que necesitarás a
+                lo largo de esta aplicación. Encontrarás las formulas de un círculo, de un elipse,
+                de una hipérbola y parabolas horizontales y verticales. asi como la descripción de los
+                elementos que cada seccion cónica tiene.  </string>
+    <string name="InstruccionesEjemplos">En esta seccion puedes encontrar ejemplos para cada sección cónica. Estos ejemplos
+                tienen su solución y explicación de las respuestas. Con ellos puedes darte una idea de como trabajarás en el
+                resto de las secciones de esta aplicación</string>
+    <string name="InstruccionesElementos">En esta seccion encontrarás ejercicios donde se te dará una ecuación de una sección
+                cónica, y tu tendras que identificar los elementos que esta contiene, tales como el foco, y los puntos importantes
+                de la grafica. </string>
+    <string name="InstruccionesEcuaciones">En esta seccion encontrarás ejercicios donde se te dará una ecuación de una sección
+                cónica en su forma estandar o general y tu tendrás que transformarla a la otra. </string>
+    <string name="InstruccionesInnovacion">En esta seccion encontrarás un graficador que te permitirá escribir una ecuacion y te mostrará
+                la gráfica de la ecuación que elegiste. </string>
 </resources>
