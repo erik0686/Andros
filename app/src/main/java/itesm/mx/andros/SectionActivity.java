@@ -1,7 +1,9 @@
 package itesm.mx.andros;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,24 +18,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SectionActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    private int numSection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +52,23 @@ public class SectionActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+        numSection = intent.getExtras().getInt("seccion");
+
+        displaySection();
+
     }
 
+    public void displaySection(){
+        switch (numSection){
+            case 0:
+                FragmentFormulario fragmentFormulario = FragmentFormulario.newInstance();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.main_content, fragmentFormulario, "TAG_SECCION" );
+                transaction.commit();
+                break;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,8 +121,8 @@ public class SectionActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_formulario, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.formulario);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            ImageView img = (ImageView) rootView.findViewById(R.id.formulario);
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }

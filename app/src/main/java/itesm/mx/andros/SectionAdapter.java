@@ -41,7 +41,7 @@ public class SectionAdapter extends ArrayAdapter<Section> {
         ivImagen = view.findViewById(R.id.menu_image);
         tvTitulo.setText(section.getTitle());
         tvDescription.setText(section.getDescription());
-        ivImagen.setImageResource(section.getIdImagen());
+        //ivImagen.setImageResource(section.getIdImagen());
 
         return view;
     }
