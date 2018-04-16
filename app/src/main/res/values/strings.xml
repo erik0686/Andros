@@ -6,4 +6,6 @@
     <string name="hintTransformarEcuaciones">Transformar ecuacion x a ecuacion y</string>
     <string name="hintEcuacionConvertir">Ecuacion a convertir</string>
     <string name="botonTransformarEcuacion">Transformar ecuación</string>
+    <string name="hintEcuacionConvertida">Ecuacion convertida</string>
+    <string name="EcuacionResultado">Resultado:</string>
 </resources>
