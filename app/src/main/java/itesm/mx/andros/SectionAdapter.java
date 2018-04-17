@@ -41,7 +41,6 @@ public class SectionAdapter extends ArrayAdapter<Section> {
         ivImagen = view.findViewById(R.id.menu_image);
         tvTitulo.setText(section.getTitle());
         tvDescription.setText(section.getDescription());
-        ivImagen.setImageResource(section.getIdImagen());
         view.setBackgroundColor(getContext().getResources().obtainTypedArray(R.array.menuColors).getColor(position, 0));
 
         return view;
