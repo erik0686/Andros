@@ -1,9 +1,8 @@
-# Energy-consumption
+# PrepaTec Ecuaciones Conicas
 
-This project allows you to see common house electric devices. It allows you to register how many times you have used them and give you the total energy consumption of each day. 
+This project will allow students from PrepaNet to learn and practice on conic ecuations such as circles, ellipses, hiperboles, and parabolas. It has a section with formulas, a section to practice transforming ecuations from general to standard form and viceversa. It also has excercises for identifying important elements of a conical ecuation. Lastly, it will allow you to graph a conic ecuation. 
 
 
-Please feel free to create PR's or comment on any idea you have!
 
 ## Table of contents
 
