@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("Prep@ Net");
-
         ListView secciones;
+
         secciones = findViewById(R.id.menu);
 
         arrayMenuSections = getDataForMenuList();
 
-        sectionAdapter = new SectionAdapter(this, arrayMenuSections);
+        sectionAdapter = new SectionAdapter(this, R.layout.main_menu_row, arrayMenuSections);
         secciones.setAdapter(sectionAdapter);
 
         secciones.setOnItemClickListener(this);

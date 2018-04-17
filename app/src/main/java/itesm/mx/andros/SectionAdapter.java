@@ -21,8 +21,8 @@ public class SectionAdapter extends ArrayAdapter<Section> {
     ImageView ivImagen;
 
 
-    public SectionAdapter(Context context, ArrayList<Section> sections){
-        super(context, 0, sections);
+    public SectionAdapter(Context context, int resource, ArrayList<Section> sections){
+        super(context, resource, sections);
     }
 
 
@@ -41,7 +41,7 @@ public class SectionAdapter extends ArrayAdapter<Section> {
         ivImagen = view.findViewById(R.id.menu_image);
         tvTitulo.setText(section.getTitle());
         tvDescription.setText(section.getDescription());
-        //ivImagen.setImageResource(section.getIdImagen());
+        view.setBackgroundColor(getContext().getResources().obtainTypedArray(R.array.menuColors).getColor(position, 0));
 
         return view;
     }
