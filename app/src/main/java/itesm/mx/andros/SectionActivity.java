@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -27,6 +28,9 @@ public class SectionActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     private int numSection;
+    private String[] sFigures = {"Círculo", "Elipse", "Parábola", "Hipérbole"};
+    private int[] sIcons = {R.drawable.circle, R.drawable.ellipse, R.drawable.parabola, R.drawable.hyperbola};
+    private int figSelected = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +47,16 @@ public class SectionActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                figSelected++;
+                if (figSelected == sFigures.length) {
+                    figSelected = 0;
+                }
+                fab.setImageResource(sIcons[figSelected]);
+                Snackbar.make(view, sFigures[figSelected], Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
