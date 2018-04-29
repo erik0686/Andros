@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intent = new Intent(this, SectionActivity.class);
+        Intent intent = new Intent(this, SectionsActivity.class);
         intent.putExtra("seccion", i);
 
         startActivity(intent);
