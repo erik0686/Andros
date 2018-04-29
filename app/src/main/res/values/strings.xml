@@ -22,4 +22,8 @@
                 cónica en su forma estandar o general y tu tendrás que transformarla a la otra. </string>
     <string name="InstruccionesInnovacion">En esta seccion encontrarás un graficador que te permitirá escribir una ecuacion y te mostrará
                 la gráfica de la ecuación que elegiste. </string>
+    <string name="title_activity_sections">SectionsActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

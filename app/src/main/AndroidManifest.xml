@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SectionActivity"
-            android:label="@string/title_activity_section"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".SectionsActivity"
+            android:label="@string/title_activity_sections"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
