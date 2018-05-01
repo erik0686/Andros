@@ -100,6 +100,9 @@ public class SectionsActivity extends AppCompatActivity
             case R.id.menu_formulario:
                 numSection = 0;
                 break;
+            case R.id.menu_ejemplos:
+                numSection = 1;
+                break;
             case R.id.menu_instrucciones:
                 numSection = 5;
                 break;
@@ -115,6 +118,12 @@ public class SectionsActivity extends AppCompatActivity
                 FragmentFormulario fragmentFormulario = FragmentFormulario.newInstance();
                 transaction.replace(R.id.content_sections, fragmentFormulario, "FRAGMENT FORMULARIO" );
                 transaction.commit();
+                break;
+            case 1:
+                FragmentExamples fragmentExamples = FragmentExamples.newInstance();
+                transaction.replace(R.id.content_sections, fragmentExamples, "FRAGMENT EJEMPLOS" );
+                transaction.commit();
+                fragmentExamples.fillListView(figSelected);
                 break;
             case 5:
                 FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();
