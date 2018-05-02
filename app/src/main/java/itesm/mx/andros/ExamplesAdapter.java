@@ -13,10 +13,13 @@ import java.util.ArrayList;
 public class ExamplesAdapter extends ArrayAdapter<Integer> {
 
     ImageView ivExample;
+    private int [] array_figuras;
 
-    public ExamplesAdapter(Context context, ArrayList<Integer> examples){
+    public ExamplesAdapter(Context context, ArrayList<Integer> examples, int[] int_array_drawable){
         super(context, 0, examples);
+        array_figuras = int_array_drawable;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
@@ -29,14 +32,8 @@ public class ExamplesAdapter extends ArrayAdapter<Integer> {
             view = LayoutInflater.from(getContext()).inflate(R.layout.example_row, parent, false);
         }
         ivExample = view.findViewById(R.id.row_example_image);
-        if(position == 0){
-            ivExample.setImageResource(R.drawable.circulo1);
 
-        }
-        if(position == 1){
-            ivExample.setImageResource(R.drawable.circulo2);
-
-        }
+        ivExample.setImageResource(array_figuras[position]);
 
         return view;
     }
