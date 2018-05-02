@@ -19,8 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class SectionsActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class SectionsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private int numSection;
     private String[] sFigures = {"Círculo", "Elipse", "Parábola", "Hipérbole"};
@@ -56,8 +55,8 @@ public class SectionsActivity extends AppCompatActivity
                     figSelected = 0;
                 }
                 fab.setImageResource(sIcons[figSelected]);
-                Snackbar.make(view, sFigures[figSelected], Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, sFigures[figSelected], Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                displaySection();
             }
         });
 
@@ -123,8 +122,7 @@ public class SectionsActivity extends AppCompatActivity
                 FragmentExamples fragmentExamples = FragmentExamples.newInstance();
                 transaction.replace(R.id.content_sections, fragmentExamples, "FRAGMENT EJEMPLOS" );
                 transaction.commit();
-                fragmentExamples.figSelected = 0;
-//                fragmentExamples.fillListView(figSelected);
+                fragmentExamples.figSelected = figSelected;
                 break;
             case 5:
                 FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();
