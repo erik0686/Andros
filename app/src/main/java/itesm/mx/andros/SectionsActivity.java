@@ -123,7 +123,8 @@ public class SectionsActivity extends AppCompatActivity
                 FragmentExamples fragmentExamples = FragmentExamples.newInstance();
                 transaction.replace(R.id.content_sections, fragmentExamples, "FRAGMENT EJEMPLOS" );
                 transaction.commit();
-                fragmentExamples.fillListView(figSelected);
+                fragmentExamples.figSelected = 0;
+//                fragmentExamples.fillListView(figSelected);
                 break;
             case 5:
                 FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();

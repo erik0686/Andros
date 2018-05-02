@@ -1,5 +1,6 @@
 package itesm.mx.andros;
 
+import android.content.Context;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class FragmentExamples extends ListFragment {
     ListView lvExamples;
+    public int figSelected;
 
     public FragmentExamples() {
     }
@@ -27,17 +29,30 @@ public class FragmentExamples extends ListFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_examples, container, false);
 
-        lvExamples = view.findViewById(R.id.example_image);
 //        lvExamples.setImageResource(R.drawable.formulas);
 
 
         return view;
     }
 
-    public void fillListView(int figSelected){
+    @Override
+    public void onActivityCreated (Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+        lvExamples = getListView();
+
+    }
+
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+
+        fillListView(figSelected);
+    }
+
+    public void fillListView(int selected){
 
 
-        switch (figSelected){
+        switch (selected){
             case 0:
                 ArrayList<Integer> circleList = new ArrayList<>();
                 circleList.add(R.drawable.circulo1);
