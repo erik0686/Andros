@@ -45,13 +45,10 @@ public class FragmentExamples extends ListFragment {
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
-
         fillListView(figSelected);
     }
 
     public void fillListView(int selected){
-
-
         switch (selected){
             case 0:
                 int[] drawables_circulo = new int[2];
