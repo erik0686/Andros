@@ -127,6 +127,12 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 transaction.commit();
                 fragmentExamples.figSelected = figSelected;
                 break;
+            case 2:
+                FragmentElements fragmentElements = FragmentElements.newInstance();
+                transaction.replace(R.id.content_sections, fragmentElements, "FRAGMENT ELEMENTOS" );
+                transaction.commit();
+                fragmentElements.figSelected = figSelected;
+                break;
             case 3:
                 FragmentEcuations fragmentEcuations = FragmentEcuations.newInstance();
                 transaction.replace(R.id.content_sections, fragmentEcuations, "FRAGMENT Ecuaciones" );
