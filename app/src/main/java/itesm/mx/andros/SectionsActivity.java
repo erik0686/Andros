@@ -102,6 +102,9 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
             case R.id.menu_ejemplos:
                 numSection = 1;
                 break;
+            case R.id.menu_elementos:
+                numSection = 3;
+                break;
             case R.id.menu_instrucciones:
                 numSection = 5;
                 break;
