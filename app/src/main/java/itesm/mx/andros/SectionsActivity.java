@@ -86,7 +86,6 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -110,6 +109,8 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 break;
         }
         displaySection();
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
