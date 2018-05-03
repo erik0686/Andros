@@ -30,9 +30,7 @@ public class FragmentElements extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Fragment fragment = new StandardEquation();
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.display_equation, fragment).commit();
+        selectEquation();
     }
 
     @Override
@@ -44,14 +42,13 @@ public class FragmentElements extends Fragment {
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
-        selectEquation(figSelected);
     }
 
-   public void selectEquation(int selected){
+   public void selectEquation(){
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         StandardEquation standardEquation= StandardEquation.newInstance();
         transaction.replace(R.id.display_equation, standardEquation, "FRAGMENT FORMULARIO" );
+        standardEquation.figSelected = figSelected;
         transaction.commit();
-        standardEquation.figSelected = selected;
     }
 }
