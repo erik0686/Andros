@@ -103,7 +103,7 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 numSection = 1;
                 break;
             case R.id.menu_elementos:
-                numSection = 3;
+                numSection = 2;
                 break;
             case R.id.menu_instrucciones:
                 numSection = 5;
@@ -126,6 +126,12 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 transaction.replace(R.id.content_sections, fragmentExamples, "FRAGMENT EJEMPLOS" );
                 transaction.commit();
                 fragmentExamples.figSelected = figSelected;
+                break;
+            case 3:
+                FragmentEcuations fragmentEcuations = FragmentEcuations.newInstance();
+                transaction.replace(R.id.content_sections, fragmentEcuations, "FRAGMENT Ecuaciones" );
+                transaction.commit();
+                fragmentEcuations.figSelected = figSelected;
                 break;
             case 5:
                 FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();
