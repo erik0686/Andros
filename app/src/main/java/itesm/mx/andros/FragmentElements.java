@@ -97,7 +97,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             int k = Integer.parseInt(tvK.getText().toString());
             int r = Integer.parseInt(tvR.getText().toString());
 
-            Circle circle = new Circle(x, h, y, k, r);
+            Circle circle = new Circle(x, y, h, k, r);
 
             tvCentro.setText(circle.getCenter());
         } else {

@@ -9,9 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by erik on 3/05/18.
- */
 public class FragmentEcuations extends Fragment {
     public int figSelected;
 
