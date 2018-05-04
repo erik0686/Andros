@@ -17,7 +17,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
     public int figSelected;
     Button btnCalculate;
     TextView tvX, tvH, tvY, tvK, tvR, tvFoco, tvCentro, tvDirectriz, tvDistFoc, tvEjeMa, tvEjeMe,
-    tvDir, tvDF, tvFo, tvEMA, tvEME, tvCen;
+    tvDir, tvDF, tvFo, tvEMA, tvEME, tvCen, tvA, tvB;
 
     public FragmentElements() {
     }
@@ -74,8 +74,10 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                     calculateCircle();
                     break;
                 case 1:
+                    calculateEllipse();
                     break;
                 case 2:
+                    calculateParabola();
                     break;
                 case 3:
                     break;
@@ -106,13 +108,15 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                 tvEjeMe.setVisibility(View.INVISIBLE);
                 break;
             case 1:
+                tvCen.setText("Centro: ");
                 tvEMA.setText("Eje Mayor: ");
-                tvFo.setVisibility(View.VISIBLE);
-                tvFoco.setVisibility(View.VISIBLE);
-                tvDistFoc.setVisibility(View.VISIBLE);
-                tvDF.setVisibility(View.VISIBLE);
-                tvEME.setVisibility(View.VISIBLE);
-                tvEjeMe.setVisibility(View.VISIBLE);
+                tvEME.setText("Eje Menor: ");
+                tvFo.setVisibility(View.INVISIBLE);
+                tvFoco.setVisibility(View.INVISIBLE);
+                tvDir.setVisibility(View.INVISIBLE);
+                tvDirectriz.setVisibility(View.INVISIBLE);
+                tvDistFoc.setVisibility(View.INVISIBLE);
+                tvDF.setVisibility(View.INVISIBLE);
                 break;
             case 2:
                 tvCen.setText("Vértice");
@@ -158,6 +162,68 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             Figura circle = new Figura(x, y, h, k, r, 0, 0);
 
             tvCentro.setText(circle.getCenter());
+            tvEjeMa.setText(String.valueOf(circle.getDiameter()));
+        } else {
+            Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void calculateEllipse() {
+        Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
+        tvX = fr.getView().findViewById(R.id.x1_coeficiente);
+        tvH = fr.getView().findViewById(R.id.x2_coeficiente);
+        tvA = fr.getView().findViewById(R.id.x_div);
+        tvY = fr.getView().findViewById(R.id.y1_coeficiente);
+        tvK = fr.getView().findViewById(R.id.y2_coeficiente);
+        tvB = fr.getView().findViewById(R.id.y_div);
+
+        tvR = fr.getView().findViewById(R.id.result);
+
+        if(tvX.getText().toString().equals(tvY.getText().toString())) {
+            int x = Integer.parseInt(tvX.getText().toString());
+            int h = Integer.parseInt(tvH.getText().toString());
+            int a = Integer.parseInt(tvA.getText().toString());
+            int y = Integer.parseInt(tvY.getText().toString());
+            int k = Integer.parseInt(tvK.getText().toString());
+            int r = Integer.parseInt(tvR.getText().toString());
+            int b = Integer.parseInt(tvB.getText().toString());
+
+
+            Figura circle = new Figura(x, y, h, k, r, a, b);
+
+            tvCentro.setText(circle.getCenter());
+            tvEjeMa.setText(String.valueOf(circle.getEjeMayor()));
+            tvEjeMe.setText(String.valueOf(circle.getEjeMenor()));
+
+        } else {
+            Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void calculateParabola() {
+        Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
+        tvX = fr.getView().findViewById(R.id.x1_coeficiente);
+        tvH = fr.getView().findViewById(R.id.x2_coeficiente);
+        tvA = fr.getView().findViewById(R.id.a_coeficiente);
+        tvY = fr.getView().findViewById(R.id.y1_coeficiente);
+        tvK = fr.getView().findViewById(R.id.y2_coeficiente);
+
+        if(tvX.getText().toString().equals(tvY.getText().toString())) {
+            int x = Integer.parseInt(tvX.getText().toString());
+            int h = Integer.parseInt(tvH.getText().toString());
+            int a = Integer.parseInt(tvA.getText().toString());
+            int y = Integer.parseInt(tvY.getText().toString());
+            int k = Integer.parseInt(tvK.getText().toString());
+
+
+            Figura parabola = new Figura(x, y, h, k, 0, a, 0);
+
+            tvFoco.setText(parabola.getFoco());
+            tvCentro.setText(parabola.getVertexParabola());
+
+            tvDirectriz.setText(String.valueOf(parabola.getDirectriz()));
+            tvEjeMa.setText(String.valueOf(parabola.getLadoRecto()));
+
         } else {
             Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
         }

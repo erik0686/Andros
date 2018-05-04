@@ -56,4 +56,55 @@ public class Figura {
         center = "(" + String.valueOf(h*-1) + ", " + String.valueOf(k*-1) + ")";
         return center;
     }
+
+    public String getVertex() {
+        String vertex;
+        vertex = "(" + String.valueOf(h) + ", " + String.valueOf(k) + ")";
+        return vertex;
+    }
+
+    public String getVertexParabola() {
+        String vertex;
+        vertex = "(" + String.valueOf((double)(h*-1) / (double)x) + ", " + String.valueOf(((double)(k*-1) / (double)(y))) + ")";
+        return vertex;
+    }
+
+    public float getDirectriz(){
+        return k - a;
+    }
+
+    public String getFoco(){
+        String foco;
+        foco = "(" + String.valueOf((double)(h*-1) / (double)x) + ", " + String.valueOf(((double)(k*-1)/(x) / ((double)(a)/4))) + ")";
+        return foco;
+    }
+
+    public float getDistanciaFocal(){
+
+        return a;
+    }
+
+    public double getDiameter(){
+        return Math.sqrt(r) * 2;
+    }
+
+    public double getEjeMayor(){
+        if (2*a > 2*b) {
+            return 2 * a;
+        }else{
+            return 2*b;
+        }
+    }
+
+    public double getEjeMenor(){
+        if (2*b < 2*a) {
+            return 2 * b;
+        }else{
+            return 2*a;
+        }
+    }
+
+    public double getLadoRecto(){
+        return 4 * a;
+    }
 }
