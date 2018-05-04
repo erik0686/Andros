@@ -16,7 +16,8 @@ import android.widget.Toast;
 public class FragmentElements extends Fragment implements View.OnClickListener {
     public int figSelected;
     Button btnCalculate;
-    TextView tvX, tvH, tvY, tvK, tvR, tvFoco, tvCentro, tvDirectriz, tvDistFoc, tvEjeMa, tvEjeMe;
+    TextView tvX, tvH, tvY, tvK, tvR, tvFoco, tvCentro, tvDirectriz, tvDistFoc, tvEjeMa, tvEjeMe,
+    tvDir, tvDF, tvFo, tvEMA, tvEME, tvCen;
 
     public FragmentElements() {
     }
@@ -41,6 +42,12 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         tvDistFoc = view.findViewById(R.id.answer_distanciafocal);
         tvEjeMa = view.findViewById(R.id.answer_ejemayor);
         tvEjeMe = view.findViewById(R.id.answer_ejemenor);
+        tvFo = view.findViewById(R.id.text_foco);
+        tvCen = view.findViewById(R.id.text_centro);
+        tvDir = view.findViewById(R.id.text_directriz);
+        tvDF = view.findViewById(R.id.text_distanciafocal);
+        tvEMA = view.findViewById(R.id.text_ejemayor);
+        tvEME = view.findViewById(R.id.text_ejemenor);
 
         btnCalculate = view.findViewById(R.id.button_calcular);
         btnCalculate.setOnClickListener(this);
@@ -49,6 +56,8 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated (Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+
+        displayElements();
 
     }
 
@@ -74,12 +83,61 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         }
     }
 
-   public void selectEquation(){
+    public void selectEquation(){
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         StandardEquation standardEquation= StandardEquation.newInstance();
         transaction.replace(R.id.display_equation, standardEquation, "FRAGMENT FORMULARIO" );
         standardEquation.figSelected = figSelected;
         transaction.commit();
+    }
+
+    public void displayElements(){
+        switch (figSelected) {
+            case 0:
+                tvCen.setText("Centro: ");
+                tvEMA.setText("Diámetro: ");
+                tvFo.setVisibility(View.INVISIBLE);
+                tvFoco.setVisibility(View.INVISIBLE);
+                tvDir.setVisibility(View.INVISIBLE);
+                tvDirectriz.setVisibility(View.INVISIBLE);
+                tvDistFoc.setVisibility(View.INVISIBLE);
+                tvDF.setVisibility(View.INVISIBLE);
+                tvEME.setVisibility(View.INVISIBLE);
+                tvEjeMe.setVisibility(View.INVISIBLE);
+                break;
+            case 1:
+                tvEMA.setText("Eje Mayor: ");
+                tvFo.setVisibility(View.VISIBLE);
+                tvFoco.setVisibility(View.VISIBLE);
+                tvDistFoc.setVisibility(View.VISIBLE);
+                tvDF.setVisibility(View.VISIBLE);
+                tvEME.setVisibility(View.VISIBLE);
+                tvEjeMe.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                tvCen.setText("Vértice");
+                tvEMA.setText("Lado Recto");
+                tvFo.setVisibility(View.VISIBLE);
+                tvFoco.setVisibility(View.VISIBLE);
+                tvDir.setVisibility(View.VISIBLE);
+                tvDirectriz.setVisibility(View.VISIBLE);
+
+                tvDistFoc.setVisibility(View.INVISIBLE);
+                tvDF.setVisibility(View.INVISIBLE);
+                tvEME.setVisibility(View.INVISIBLE);
+                tvEjeMe.setVisibility(View.INVISIBLE);
+                break;
+            case 3:
+                tvEMA.setText("Eje Focal");
+
+                tvDir.setVisibility(View.INVISIBLE);
+                tvDirectriz.setVisibility(View.INVISIBLE);
+                tvDistFoc.setVisibility(View.INVISIBLE);
+                tvDF.setVisibility(View.INVISIBLE);
+                tvEME.setVisibility(View.INVISIBLE);
+                tvEjeMe.setVisibility(View.INVISIBLE);
+                break;
+        }
     }
 
     public void calculateCircle() {
@@ -97,7 +155,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             int k = Integer.parseInt(tvK.getText().toString());
             int r = Integer.parseInt(tvR.getText().toString());
 
-            Circle circle = new Circle(x, y, h, k, r);
+            Figura circle = new Figura(x, y, h, k, r, 0, 0);
 
             tvCentro.setText(circle.getCenter());
         } else {

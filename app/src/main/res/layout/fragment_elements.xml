@@ -27,6 +27,7 @@
 
         <TableRow>
             <TextView
+                android:id="@+id/text_foco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Foco: "
@@ -64,6 +65,7 @@
 
         <TableRow>
             <TextView
+                android:id="@+id/text_directriz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Directriz: "
@@ -82,6 +84,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/text_distanciafocal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Distancia Focal: "
@@ -138,7 +141,7 @@
     </TableLayout>
 
     <ImageView
-        android:id="@+id/formulario"
+        android:id="@+id/image_figura"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_marginTop="25dp"
