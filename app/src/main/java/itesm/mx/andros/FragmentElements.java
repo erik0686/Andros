@@ -302,7 +302,6 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             Figura hyperbola = new Figura(x, y, h, k, r, a, b);
 
             tvRow1Answer.setText(hyperbola.getVertex());
-            tvRow2Answer.setText(hyperbola.getFoco());
             tvRow3Answer.setText(hyperbola.getCenter());
             tvRow4Answer.setText(String.valueOf(hyperbola.getLadoRecto()));
         }
