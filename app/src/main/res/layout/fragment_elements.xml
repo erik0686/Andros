@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="(0, 0)"
+                android:hint="(x, y)"
                 android:textStyle="italic"
                 android:textSize="10pt"/>
         </TableRow>
