@@ -210,7 +210,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             Figura elipse = new Figura(x, y, h, k, r, a, b);
 
             tvRow1Answer.setText(elipse.getCenter());
-            tvRow2Answer.setText(elipse.getFoco());
+            tvRow2Answer.setText(elipse.getFocusEllipse());
             tvRow3Answer.setText(String.valueOf(elipse.getEjeMayor()));
             tvRow4Answer.setText(String.valueOf(elipse.getEjeMenor()));
         }

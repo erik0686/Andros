@@ -1,6 +1,7 @@
 package itesm.mx.andros;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
 
 /**
  * Created by LC on 5/3/2018.
@@ -63,6 +64,12 @@ public class Figura {
         String vertex;
         vertex = "(" + String.valueOf(h) + ", " + String.valueOf(k) + ")";
         return vertex;
+    }
+
+    public String getFocusEllipse(){
+        String foco;
+        foco = "(" + String.valueOf((h*-1)/(double)x) + ", " +(((k*-1)/(double)y) + sqrt(abs(abs(a)-abs(b))) ) + ")";
+        return foco;
     }
 
 
