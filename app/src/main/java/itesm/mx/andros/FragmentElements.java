@@ -16,8 +16,8 @@ import android.widget.Toast;
 public class FragmentElements extends Fragment implements View.OnClickListener {
     public int figSelected;
     Button btnCalculate;
-    TextView tvX, tvH, tvY, tvK, tvR, tvFoco, tvCentro, tvDirectriz, tvDistFoc, tvEjeMa, tvEjeMe,
-    tvDir, tvDF, tvFo, tvEMA, tvEME, tvCen, tvA, tvB;
+    TextView tvX, tvH, tvY, tvK, tvR, tvA, tvB, tvRow1Answer, tvRow2Answer, tvRow3Answer,
+            tvRow4Answer, tvRow5Answer, tvRow6Answer, tvRow1, tvRow2, tvRow3, tvRow4, tvRow5, tvRow6;
 
     public FragmentElements() {
     }
@@ -36,18 +36,18 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         selectEquation();
 
-        tvFoco = view.findViewById(R.id.answer_foco);
-        tvCentro = view.findViewById(R.id.answer_centro);
-        tvDirectriz = view.findViewById(R.id.answer_directriz);
-        tvDistFoc = view.findViewById(R.id.answer_distanciafocal);
-        tvEjeMa = view.findViewById(R.id.answer_ejemayor);
-        tvEjeMe = view.findViewById(R.id.answer_ejemenor);
-        tvFo = view.findViewById(R.id.text_foco);
-        tvCen = view.findViewById(R.id.text_centro);
-        tvDir = view.findViewById(R.id.text_directriz);
-        tvDF = view.findViewById(R.id.text_distanciafocal);
-        tvEMA = view.findViewById(R.id.text_ejemayor);
-        tvEME = view.findViewById(R.id.text_ejemenor);
+        tvRow1Answer = view.findViewById(R.id.answer_foco);
+        tvRow2Answer = view.findViewById(R.id.answer_centro);
+        tvRow3Answer = view.findViewById(R.id.answer_directriz);
+        tvRow4Answer = view.findViewById(R.id.answer_distanciafocal);
+        tvRow5Answer = view.findViewById(R.id.answer_ejemayor);
+        tvRow6Answer = view.findViewById(R.id.answer_ejemenor);
+        tvRow1 = view.findViewById(R.id.text_foco);
+        tvRow2 = view.findViewById(R.id.text_centro);
+        tvRow3 = view.findViewById(R.id.text_directriz);
+        tvRow4 = view.findViewById(R.id.text_distanciafocal);
+        tvRow5 = view.findViewById(R.id.text_ejemayor);
+        tvRow6 = view.findViewById(R.id.text_ejemenor);
 
         btnCalculate = view.findViewById(R.id.button_calcular);
         btnCalculate.setOnClickListener(this);
@@ -96,52 +96,39 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
     public void displayElements(){
         switch (figSelected) {
             case 0:
-                tvCen.setText("Centro: ");
-                tvEMA.setText("Diámetro: ");
-                tvFo.setVisibility(View.INVISIBLE);
-                tvFoco.setVisibility(View.INVISIBLE);
-                tvDir.setVisibility(View.INVISIBLE);
-                tvDirectriz.setVisibility(View.INVISIBLE);
-                tvDistFoc.setVisibility(View.INVISIBLE);
-                tvDF.setVisibility(View.INVISIBLE);
-                tvEME.setVisibility(View.INVISIBLE);
-                tvEjeMe.setVisibility(View.INVISIBLE);
+                tvRow1.setText("Centro: ");
+                tvRow2.setText("Diámetro: ");
+                tvRow2Answer.setHint("n");
+
+                tvRow3.setVisibility(View.INVISIBLE);
+                tvRow3Answer.setVisibility(View.INVISIBLE);
+                tvRow4.setVisibility(View.INVISIBLE);
+                tvRow4Answer.setVisibility(View.INVISIBLE);
                 break;
             case 1:
-                tvCen.setText("Centro: ");
-                tvEMA.setText("Eje Mayor: ");
-                tvEME.setText("Eje Menor: ");
-                tvFo.setVisibility(View.INVISIBLE);
-                tvFoco.setVisibility(View.INVISIBLE);
-                tvDir.setVisibility(View.INVISIBLE);
-                tvDirectriz.setVisibility(View.INVISIBLE);
-                tvDistFoc.setVisibility(View.INVISIBLE);
-                tvDF.setVisibility(View.INVISIBLE);
+                tvRow1.setText("Centro: ");
+                tvRow2.setText("Foco: ");
+                tvRow3.setText("Eje Mayor: ");
+                tvRow4.setText("Eje Menor: ");
                 break;
             case 2:
-                tvCen.setText("Vértice");
-                tvEMA.setText("Lado Recto");
-                tvFo.setVisibility(View.VISIBLE);
-                tvFoco.setVisibility(View.VISIBLE);
-                tvDir.setVisibility(View.VISIBLE);
-                tvDirectriz.setVisibility(View.VISIBLE);
-
-                tvDistFoc.setVisibility(View.INVISIBLE);
-                tvDF.setVisibility(View.INVISIBLE);
-                tvEME.setVisibility(View.INVISIBLE);
-                tvEjeMe.setVisibility(View.INVISIBLE);
+                tvRow1.setText("Vértice: ");
+                tvRow2.setText("Foco: ");
+                tvRow3.setText("Directriz: ");
+                tvRow4.setText("Lado Recto: ");
                 break;
             case 3:
-                tvEMA.setText("Eje Focal");
-
-                tvDir.setVisibility(View.INVISIBLE);
-                tvDirectriz.setVisibility(View.INVISIBLE);
-                tvDistFoc.setVisibility(View.INVISIBLE);
-                tvDF.setVisibility(View.INVISIBLE);
-                tvEME.setVisibility(View.INVISIBLE);
-                tvEjeMe.setVisibility(View.INVISIBLE);
+                tvRow1.setText("Vértice: ");
+                tvRow2.setText("Foco: ");
+                tvRow3.setText("Centro: ");
+                tvRow3Answer.setHint("(x, y)");
+                tvRow4.setText("Lado Recto: ");
                 break;
         }
+        tvRow5.setVisibility(View.INVISIBLE);
+        tvRow5Answer.setVisibility(View.INVISIBLE);
+        tvRow6.setVisibility(View.INVISIBLE);
+        tvRow6Answer.setVisibility(View.INVISIBLE);
     }
 
     public void calculateCircle() {
@@ -152,17 +139,25 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         tvK = fr.getView().findViewById(R.id.y2_coeficiente);
         tvR = fr.getView().findViewById(R.id.result);
 
+        int x, h, y, k, r;
+
         if(tvX.getText().toString().equals(tvY.getText().toString())) {
-            int x = Integer.parseInt(tvX.getText().toString());
-            int h = Integer.parseInt(tvH.getText().toString());
-            int y = Integer.parseInt(tvY.getText().toString());
-            int k = Integer.parseInt(tvK.getText().toString());
-            int r = Integer.parseInt(tvR.getText().toString());
-
-            Figura circle = new Figura(x, y, h, k, r, 0, 0);
-
-            tvCentro.setText(circle.getCenter());
-            tvEjeMa.setText(String.valueOf(circle.getDiameter()));
+            if(tvR.getText().toString().equals("") || tvR.getText().toString().equals("0")) {
+                Toast.makeText(getContext(), "El Radio cuadrado debe ser mayor a 0", Toast.LENGTH_LONG).show();
+            } else{
+                if(tvX.getText().toString().equals("")) { x = 1;}
+                    else if(tvX.getText().toString().equals("-")) {x = -1;}
+                    else {x = Integer.parseInt(tvX.getText().toString());}
+                if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
+                if(tvY.getText().toString().equals("")) { y = 1;}
+                    else if(tvY.getText().toString().equals("-")) {y = -1;}
+                    else {y = Integer.parseInt(tvY.getText().toString());}
+                if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
+                r = Integer.parseInt(tvR.getText().toString());
+                Figura circle = new Figura(x, y, h, k, r, 0, 0);
+                tvRow1Answer.setText(circle.getCenter());
+                tvRow2Answer.setText(String.valueOf(circle.getDiameter()));
+            }
         } else {
             Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
         }
@@ -191,9 +186,9 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
 
             Figura circle = new Figura(x, y, h, k, r, a, b);
 
-            tvCentro.setText(circle.getCenter());
-            tvEjeMa.setText(String.valueOf(circle.getEjeMayor()));
-            tvEjeMe.setText(String.valueOf(circle.getEjeMenor()));
+            tvRow2Answer.setText(circle.getCenter());
+            tvRow5Answer.setText(String.valueOf(circle.getEjeMayor()));
+            tvRow6Answer.setText(String.valueOf(circle.getEjeMenor()));
 
         } else {
             Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
@@ -208,24 +203,25 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         tvY = fr.getView().findViewById(R.id.y1_coeficiente);
         tvK = fr.getView().findViewById(R.id.y2_coeficiente);
 
-        if(tvX.getText().toString().equals(tvY.getText().toString())) {
-            int x = Integer.parseInt(tvX.getText().toString());
-            int h = Integer.parseInt(tvH.getText().toString());
-            int a = Integer.parseInt(tvA.getText().toString());
-            int y = Integer.parseInt(tvY.getText().toString());
-            int k = Integer.parseInt(tvK.getText().toString());
+        if(tvX.getText().toString().equals("0") || tvY.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "El coeficiente de X y el de Y deben ser mayores a 0", Toast.LENGTH_LONG).show();
 
+        } else {
+            int x, h, a, y, k;
+
+            if(tvX.getText().toString().equals("")) { x = 1;} else {x = Integer.parseInt(tvX.getText().toString());}
+            if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;} else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
+            if(tvA.getText().toString().equals("")) { a = 1;} else {a = Integer.parseInt(tvK.getText().toString());}
 
             Figura parabola = new Figura(x, y, h, k, 0, a, 0);
 
-            tvFoco.setText(parabola.getFoco());
-            tvCentro.setText(parabola.getVertexParabola());
+            tvRow1Answer.setText(parabola.getFoco());
+            tvRow2Answer.setText(parabola.getVertexParabola());
 
-            tvDirectriz.setText(String.valueOf(parabola.getDirectriz()));
-            tvEjeMa.setText(String.valueOf(parabola.getLadoRecto()));
-
-        } else {
-            Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
+            tvRow3Answer.setText(String.valueOf(parabola.getDirectriz()));
+            tvRow5Answer.setText(String.valueOf(parabola.getLadoRecto()));
         }
     }
 }
