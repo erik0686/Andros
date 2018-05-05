@@ -205,23 +205,27 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
 
         if(tvX.getText().toString().equals("0") || tvY.getText().toString().equals("0")) {
             Toast.makeText(getContext(), "El coeficiente de X y el de Y deben ser mayores a 0", Toast.LENGTH_LONG).show();
-
         } else {
             int x, h, a, y, k;
 
-            if(tvX.getText().toString().equals("")) { x = 1;} else {x = Integer.parseInt(tvX.getText().toString());}
+            if(tvX.getText().toString().equals("")) { x = 1;}
+                else if(tvX.getText().toString().equals("-")) {x = -1;}
+                else {x = Integer.parseInt(tvX.getText().toString());}
             if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
-            if(tvY.getText().toString().equals("")) { y = 1;} else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;}
+                else if(tvY.getText().toString().equals("-")) {y = -1;}
+                else {y = Integer.parseInt(tvY.getText().toString());}
             if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
-            if(tvA.getText().toString().equals("")) { a = 1;} else {a = Integer.parseInt(tvK.getText().toString());}
+            if(tvA.getText().toString().equals("")) { a = 1;}
+                else if(tvA.getText().toString().equals("-")) {a = -1;}
+                else {a = Integer.parseInt(tvA.getText().toString());}
 
             Figura parabola = new Figura(x, y, h, k, 0, a, 0);
 
-            tvRow1Answer.setText(parabola.getFoco());
-            tvRow2Answer.setText(parabola.getVertexParabola());
-
+            tvRow1Answer.setText(parabola.getVertexParabola());
+            tvRow2Answer.setText(parabola.getFoco());
             tvRow3Answer.setText(String.valueOf(parabola.getDirectriz()));
-            tvRow5Answer.setText(String.valueOf(parabola.getLadoRecto()));
+            tvRow4Answer.setText(String.valueOf(parabola.getLadoRecto()));
         }
     }
 }

@@ -69,13 +69,13 @@ public class Figura {
         return vertex;
     }
 
-    public float getDirectriz(){
-        return k - a;
+    public double getDirectriz(){
+        return ((double) k / y) - (((double) a * y) / 4);
     }
 
     public String getFoco(){
         String foco;
-        foco = "(" + String.valueOf((double)(h*-1) / (double)x) + ", " + String.valueOf(((double)(k*-1)/(x) / ((double)(a)/4))) + ")";
+        foco = "(" + String.valueOf((double)((h*-1) / x )) + ", " + String.valueOf(((double) k / y) + (((double) a * y) / 4)) + ")";
         return foco;
     }
 
@@ -105,6 +105,8 @@ public class Figura {
     }
 
     public double getLadoRecto(){
+        double laRo = ((double)(k*-1) / (double)(y));
+
         return 4 * a;
     }
 }
