@@ -80,6 +80,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                     calculateParabola();
                     break;
                 case 3:
+                    calculateHyperbola();
                     break;
             }
         }
@@ -141,10 +142,15 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
 
         int x, h, y, k, r;
 
-        if(tvX.getText().toString().equals(tvY.getText().toString())) {
+        if (tvH.getText().toString().equals("-") || tvK.getText().toString().equals("-")){
+            Toast.makeText(getContext(), "Valor inválido en alguno de los campos: H ó K",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvX.getText().toString().equals(tvY.getText().toString())) {
             if(tvR.getText().toString().equals("") || tvR.getText().toString().equals("0")) {
                 Toast.makeText(getContext(), "El Radio cuadrado debe ser mayor a 0", Toast.LENGTH_LONG).show();
-            } else{
+            }
+            else {
                 if(tvX.getText().toString().equals("")) { x = 1;}
                     else if(tvX.getText().toString().equals("-")) {x = -1;}
                     else {x = Integer.parseInt(tvX.getText().toString());}
@@ -158,7 +164,8 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                 tvRow1Answer.setText(circle.getCenter());
                 tvRow2Answer.setText(String.valueOf(circle.getDiameter()));
             }
-        } else {
+        }
+        else {
             Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
         }
     }
@@ -188,7 +195,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         }
         else if (tvH.getText().toString().equals("-") || tvK.getText().toString().equals("-") ||
                 tvA.getText().toString().equals("-") || tvB.getText().toString().equals("-")){
-            Toast.makeText(getContext(), "Valor inválido en alguno de los campos: H, K, A, o B",
+            Toast.makeText(getContext(), "Valor inválido en alguno de los campos: A, B, H ó K",
                     Toast.LENGTH_LONG).show();
         }
         else {
@@ -245,6 +252,59 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             tvRow2Answer.setText(parabola.getFocusParabola());
             tvRow3Answer.setText(String.valueOf(parabola.getDirectrixParabola()));
             tvRow4Answer.setText(String.valueOf(parabola.getLadoRecto()));
+        }
+    }
+
+    public void calculateHyperbola() {
+        Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
+        tvX = fr.getView().findViewById(R.id.x1_coeficiente);
+        tvH = fr.getView().findViewById(R.id.x2_coeficiente);
+        tvA = fr.getView().findViewById(R.id.x_div);
+        tvY = fr.getView().findViewById(R.id.y1_coeficiente);
+        tvK = fr.getView().findViewById(R.id.y2_coeficiente);
+        tvB = fr.getView().findViewById(R.id.y_div);
+
+        tvR = fr.getView().findViewById(R.id.result);
+
+        if(tvA.getText().toString().equals("0") || tvB.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "Los valores de A y B no pueden ser 0",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvX.getText().toString().equals("0") || tvY.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "Los coeficientes de X y Y no pueden ser 0",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvR.getText().toString().equals("") || tvR.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "La igualdad debe ser un valor mayor a 0 (positivo)",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvH.getText().toString().equals("-") || tvK.getText().toString().equals("-") ||
+                tvA.getText().toString().equals("-") || tvB.getText().toString().equals("-")){
+            Toast.makeText(getContext(), "Valor inválido en alguno de los campos: A, B, H ó K",
+                    Toast.LENGTH_LONG).show();
+        }
+        else {
+            int x, h, a, y, k, b, r;
+            if(tvX.getText().toString().equals("")) { x = 1;}
+                else if(tvX.getText().toString().equals("-")) {x = -1;}
+                else {x = Integer.parseInt(tvX.getText().toString());}
+            if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
+            if(tvA.getText().toString().equals("")) { a = 1;}
+                else {a = Integer.parseInt(tvA.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;}
+                else if(tvY.getText().toString().equals("-")) {y = -1;}
+                else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
+            if(tvB.getText().toString().equals("")) { b = 1;}
+             else {b = Integer.parseInt(tvB.getText().toString());}
+            r = Integer.parseInt(tvR.getText().toString());
+
+            Figura hyperbola = new Figura(x, y, h, k, r, a, b);
+
+            tvRow1Answer.setText(hyperbola.getVertex());
+            tvRow2Answer.setText(hyperbola.getFoco());
+            tvRow3Answer.setText(hyperbola.getCenter());
+            tvRow4Answer.setText(String.valueOf(hyperbola.getLadoRecto()));
         }
     }
 }

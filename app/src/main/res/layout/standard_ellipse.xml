@@ -20,7 +20,7 @@
             android:textStyle="bold"/>
         <EditText
             android:id="@+id/x1_coeficiente"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:hint="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             android:textStyle="bold"/>
         <EditText
             android:id="@+id/x_div"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:hint="a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             android:textStyle="bold"/>
         <EditText
             android:id="@+id/y1_coeficiente"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:hint="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
             android:textStyle="bold"/>
         <EditText
             android:id="@+id/y_div"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:hint="b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
