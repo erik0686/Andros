@@ -174,24 +174,45 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
 
         tvR = fr.getView().findViewById(R.id.result);
 
-        if(tvX.getText().toString().equals(tvY.getText().toString())) {
-            int x = Integer.parseInt(tvX.getText().toString());
-            int h = Integer.parseInt(tvH.getText().toString());
-            int a = Integer.parseInt(tvA.getText().toString());
-            int y = Integer.parseInt(tvY.getText().toString());
-            int k = Integer.parseInt(tvK.getText().toString());
-            int r = Integer.parseInt(tvR.getText().toString());
-            int b = Integer.parseInt(tvB.getText().toString());
+        if(tvA.getText().toString().equals("0") || tvB.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "Los valores de A y B no pueden ser 0",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvX.getText().toString().equals("0") || tvY.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "Los coeficientes de X y Y no pueden ser 0",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvR.getText().toString().equals("") || tvR.getText().toString().equals("0")) {
+            Toast.makeText(getContext(), "La igualdad debe ser un valor mayor a 0 (positivo)",
+                    Toast.LENGTH_LONG).show();
+        }
+        else if (tvH.getText().toString().equals("-") || tvK.getText().toString().equals("-") ||
+                tvA.getText().toString().equals("-") || tvB.getText().toString().equals("-")){
+            Toast.makeText(getContext(), "Valor inválido en alguno de los campos: H, K, A, o B",
+                    Toast.LENGTH_LONG).show();
+        }
+        else {
+            int x, h, a, y, k, b, r;
+            if(tvX.getText().toString().equals("")) { x = 1;}
+                else if(tvX.getText().toString().equals("-")) {x = -1;}
+                else {x = Integer.parseInt(tvX.getText().toString());}
+            if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
+            if(tvA.getText().toString().equals("")) { a = 1;}
+                else {a = Integer.parseInt(tvA.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;}
+                else if(tvY.getText().toString().equals("-")) {y = -1;}
+                else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
+            if(tvB.getText().toString().equals("")) { b = 1;}
+                else {b = Integer.parseInt(tvB.getText().toString());}
+            r = Integer.parseInt(tvR.getText().toString());
 
+            Figura elipse = new Figura(x, y, h, k, r, a, b);
 
-            Figura circle = new Figura(x, y, h, k, r, a, b);
-
-            tvRow2Answer.setText(circle.getCenter());
-            tvRow5Answer.setText(String.valueOf(circle.getEjeMayor()));
-            tvRow6Answer.setText(String.valueOf(circle.getEjeMenor()));
-
-        } else {
-            Toast.makeText(getContext(), "El coeficiente de X tiene que ser igual que el coeficiente de Y", Toast.LENGTH_LONG).show();
+            tvRow1Answer.setText(elipse.getCenter());
+            tvRow2Answer.setText(elipse.getFoco());
+            tvRow3Answer.setText(String.valueOf(elipse.getEjeMayor()));
+            tvRow4Answer.setText(String.valueOf(elipse.getEjeMenor()));
         }
     }
 
