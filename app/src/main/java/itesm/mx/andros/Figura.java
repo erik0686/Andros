@@ -1,5 +1,7 @@
 package itesm.mx.andros;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by LC on 5/3/2018.
  */
@@ -69,19 +71,14 @@ public class Figura {
         return vertex;
     }
 
-    public float getDirectriz(){
-        return k - a;
+    public double getDirectriz(){
+        return ((double) k / y) - (((double) a * y) / 4);
     }
 
     public String getFoco(){
         String foco;
-        foco = "(" + String.valueOf((double)(h*-1) / (double)x) + ", " + String.valueOf(((double)(k*-1)/(x) / ((double)(a)/4))) + ")";
+        foco = "(" + String.valueOf(((double)(h*-1) / x )) + ", " + String.valueOf(((double) k / y) + ((a * y) / (double)4)) + ")";
         return foco;
-    }
-
-    public float getDistanciaFocal(){
-
-        return a;
     }
 
     public double getDiameter(){
@@ -105,6 +102,27 @@ public class Figura {
     }
 
     public double getLadoRecto(){
-        return 4 * a;
+
+        return 4 * getDistanciaFocal();
+    }
+
+    public double getDistanciaFocal(){
+        double verticeX = ((double)(h*-1) / (double)x);
+        double verticeY = (((double)(k*-1) / (double)(y)));
+
+        double focoX = ((double)((h*-1) / x ));
+        double focoY = (((double) k / y) + (((double) a * y) / 4));
+
+        if( (verticeY > 0 && focoY < 0)  ){
+            return  verticeY - focoY;
+        }
+        else if (verticeY < 0 && focoY > 0){
+            return  focoY - verticeY;
+        }
+        else {
+            return abs(verticeY - focoY);
+        }
+
+
     }
 }
