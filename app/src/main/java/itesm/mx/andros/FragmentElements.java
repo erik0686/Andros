@@ -221,8 +221,8 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             Figura parabola = new Figura(x, 0, h, k, 0, 0, 0);
 
             tvRow1Answer.setText(parabola.getVertexParabola());
-            tvRow2Answer.setText(parabola.getFoco());
-            tvRow3Answer.setText(String.valueOf(parabola.getDirectriz()));
+            tvRow2Answer.setText(parabola.getFocusParabola());
+            tvRow3Answer.setText(String.valueOf(parabola.getDirectrixParabola()));
             tvRow4Answer.setText(String.valueOf(parabola.getLadoRecto()));
         }
     }

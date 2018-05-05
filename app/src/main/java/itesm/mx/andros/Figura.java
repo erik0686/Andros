@@ -67,7 +67,7 @@ public class Figura {
 
 
     public double getDiameter(){
-        return Math.sqrt(r) * 2;
+        return Math.sqrt(r)/x * 2;
     }
 
     public double getEjeMayor(){
@@ -90,18 +90,19 @@ public class Figura {
 
     public String getVertexParabola(){
         String vertex;
-        vertex = "(" + String.valueOf((b*-1)/(double)(2*a)) + ", " + String.valueOf(4*a*k - ((b*b) / (double)(4*a) )) + ")";
+        double valorX = (h*-1)/(double)(2*x);
+        vertex = "(" + String.valueOf(valorX) + ", " + String.valueOf(x*valorX*valorX + h*valorX + k) + ")";
         return vertex;
     }
 
     public String getFocusParabola(){
         String focus;
-        focus = "(" + String.valueOf((b*-1)/(double)(2*a)) + ", " + String.valueOf(4*a*k - (b*b) + (1/ (double)(4*a) )) + ")";
+        focus = "(" + String.valueOf((h*-1)/(double)(2*x)) + ", " + String.valueOf((4*x*k - (h*h) + 1)/ (double)(4*x) ) + ")";
         return focus;
     }
 
     public double getDirectrixParabola(){
-        return k - (b*b + 1) *4*a;
+        return (double)((4*x*k - (h*h) - 1)/ (double)(4*x) );
     }
 
     public double getLadoRecto(){
@@ -110,11 +111,11 @@ public class Figura {
     }
 
     public double getDistanciaFocal(){
-        double verticeX = (b*-1)/(double)(2*a);
-        double verticeY = 4*a*k - ((b*b) / (double)(4*a) );
+        double verticeX = (h*-1)/(double)(2*x);
+        double verticeY = 4*x*k - ((h*h) / (double)(4*x) );
 
-        double focoX = ((b*-1)/(double)(2*a));
-        double focoY = (4*a*k - (b*b) + (1/ (double)(4*a) ));
+        double focoX = ((h*-1)/(double)(2*x));
+        double focoY = (4*x*k - (h*h) + (1/ (double)(4*x) ));
 
         if( (verticeY > 0 && focoY < 0)  ){
             return  verticeY - focoY;
