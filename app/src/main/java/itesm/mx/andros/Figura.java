@@ -55,7 +55,7 @@ public class Figura {
 
     public String getCenter() {
         String center;
-        center = "(" + String.valueOf(h*-1) + ", " + String.valueOf(k*-1) + ")";
+        center = "(" + String.valueOf((h*-1)/(double)x) + ", " + String.valueOf((k*-1)/(double)y) + ")";
         return center;
     }
 
@@ -65,21 +65,6 @@ public class Figura {
         return vertex;
     }
 
-    public String getVertexParabola() {
-        String vertex;
-        vertex = "(" + String.valueOf((double)(h*-1) / (double)x) + ", " + String.valueOf(((double)(k*-1) / (double)(y))) + ")";
-        return vertex;
-    }
-
-    public double getDirectriz(){
-        return ((double) k / y) - (((double) a * y) / 4);
-    }
-
-    public String getFoco(){
-        String foco;
-        foco = "(" + String.valueOf(((double)(h*-1) / x )) + ", " + String.valueOf(((double) k / y) + ((a * y) / (double)4)) + ")";
-        return foco;
-    }
 
     public double getDiameter(){
         return Math.sqrt(r) * 2;
@@ -101,17 +86,35 @@ public class Figura {
         }
     }
 
+    // METODOS DE PARABOLA
+
+    public String getVertexParabola(){
+        String vertex;
+        vertex = "(" + String.valueOf((b*-1)/(double)(2*a)) + ", " + String.valueOf(4*a*k - ((b*b) / (double)(4*a) )) + ")";
+        return vertex;
+    }
+
+    public String getFocusParabola(){
+        String focus;
+        focus = "(" + String.valueOf((b*-1)/(double)(2*a)) + ", " + String.valueOf(4*a*k - (b*b) + (1/ (double)(4*a) )) + ")";
+        return focus;
+    }
+
+    public double getDirectrixParabola(){
+        return k - (b*b + 1) *4*a;
+    }
+
     public double getLadoRecto(){
 
         return 4 * getDistanciaFocal();
     }
 
     public double getDistanciaFocal(){
-        double verticeX = ((double)(h*-1) / (double)x);
-        double verticeY = (((double)(k*-1) / (double)(y)));
+        double verticeX = (b*-1)/(double)(2*a);
+        double verticeY = 4*a*k - ((b*b) / (double)(4*a) );
 
-        double focoX = ((double)((h*-1) / x ));
-        double focoY = (((double) k / y) + (((double) a * y) / 4));
+        double focoX = ((b*-1)/(double)(2*a));
+        double focoY = (4*a*k - (b*b) + (1/ (double)(4*a) ));
 
         if( (verticeY > 0 && focoY < 0)  ){
             return  verticeY - focoY;
