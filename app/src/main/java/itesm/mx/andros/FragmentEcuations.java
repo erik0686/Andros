@@ -32,8 +32,10 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
             {"1", "2", "1", "1", "-3"}, {"1", "-6", "1", "9", "0"}};
     String[][] anParabolaStan = {{"1", "0", "0", "-1", "0", "0"}, {"1", "0", "-2", "-4", "5", "0"},
             {"1", "0", "-12", "-8", "20", "0"}, {"0", "1", "-1", "4", "7", "0"}, {"0", "1", "-9", "-12", "36", "0"}};
-    String[][] anHyperGen = {};
-    String[][] anHyperStan = {};
+    String[][] anHyperGen = {{"1", "0", "25", "4", "0", "25", "1"}, {"1", "-1", "9", "1", "-2", "9", "1"},
+            {"1", "0", "4", "1", "0", "16", "1"}, {"1", "-2", "9", "1", "0", "16", "1"}, {/*Poner ejemplo sin fracciones*/}};
+    String[][] anHyperStan = {{"1", "-4", "0", "0", "-25", "0"}, {"1", "-1", "-2", "4", "-12", "0"},
+            {"4", "-1", "0", "0", "-16", "0"}, {"16", "-9", "-64", "0", "-80", "0"}, {/*Poner ejemplo sin fracciones*/}};
     int[] circleStan = {R.drawable.circuloestandar0, R.drawable.circuloestandar1,
             R.drawable.circuloestandar2, R.drawable.circuloestandar3, R.drawable.circuloestandar4};
     int[] circleGen = {R.drawable.circulogeneral0, R.drawable.circulogeneral1,
