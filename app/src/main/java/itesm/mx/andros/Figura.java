@@ -1,5 +1,7 @@
 package itesm.mx.andros;
 
+import java.math.BigDecimal;
+
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 
@@ -56,7 +58,7 @@ public class Figura {
 
     public String getCenter() {
         String center;
-        center = "(" + String.valueOf((h*-1)/(double)x) + ", " + String.valueOf((k*-1)/(double)y) + ")";
+        center = "(" + String.valueOf(truncateDecimal((((h*-1)/(double)x)),2)    ) + ", " + String.valueOf(truncateDecimal(((k*-1)/(double)y),2)) + ")";
         return center;
     }
 
@@ -68,7 +70,7 @@ public class Figura {
 
     public String getFocusEllipse(){
         String foco;
-        foco = "(" + String.valueOf((h*-1)/(double)x) + ", " +(((k*-1)/(double)y) + sqrt(abs(abs(a)-abs(b))) ) + ")";
+        foco = "(" + String.valueOf(truncateDecimal(((h*-1)/(double)x),2)) + ", " + truncateDecimal((((k*-1)/(double)y) + sqrt(abs(abs(a)-abs(b))) ),2) + ")";
         return foco;
     }
 
@@ -104,31 +106,32 @@ public class Figura {
     public String getVertexParabola(){
         String vertex;
         double valorX = (h*-1)/(double)(2*x);
-        vertex = "(" + String.valueOf(valorX) + ", " + String.valueOf(x*valorX*valorX + h*valorX + k) + ")";
+        vertex = "(" + String.valueOf(truncateDecimal(valorX,2)) + ", " + String.valueOf(truncateDecimal((x*valorX*valorX + h*valorX + k),2)) + ")";
         return vertex;
     }
 
     public String getFocusParabola(){
         String focus;
-        focus = "(" + String.valueOf((h*-1)/(double)(2*x)) + ", " + String.valueOf((4*x*k - (h*h) + 1)/ (double)(4*x) ) + ")";
+        focus = "(" + String.valueOf(truncateDecimal(((h*-1)/(double)(2*x)),2)) + ", " + String.valueOf(truncateDecimal(((4*x*k - (h*h) + 1)/ (double)(4*x)),2) ) + ")";
         return focus;
     }
 
     public double getDirectrixParabola(){
-        return (double)((4*x*k - (h*h) - 1)/ (double)(4*x) );
+
+        return truncateDecimal(((4*x*k - (h*h) - 1)/ (double)(4*x) ),2).doubleValue();
     }
 
     public double getLadoRecto(){
 
-        return 4 * getDistanciaFocal();
+        return truncateDecimal((4 * getDistanciaFocal()),2).doubleValue();
     }
 
     public double getDistanciaFocal(){
         double verticeX = (h*-1)/(double)(2*x);
-        double verticeY = 4*x*k - ((h*h) / (double)(4*x) );
+        double verticeY = x*verticeX*verticeX + h*verticeX + k;
 
         double focoX = ((h*-1)/(double)(2*x));
-        double focoY = (4*x*k - (h*h) + (1/ (double)(4*x) ));
+        double focoY = ((4*x*k - (h*h) + 1)/ (double)(4*x));
 
         if( (verticeY > 0 && focoY < 0)  ){
             return  verticeY - focoY;
@@ -141,5 +144,20 @@ public class Figura {
         }
 
 
+    }
+
+    public String getCenterHiperbola() {
+        String center;
+        center = "(" + String.valueOf(truncateDecimal((((h*-1)/(double)x)),2)    ) + ", " + String.valueOf(truncateDecimal(((k*-1)/(double)y),2)) + ")";
+        return center;
+    }
+
+    private static BigDecimal truncateDecimal(double x,int numberofDecimals)
+    {
+        if ( x > 0) {
+            return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_FLOOR);
+        } else {
+            return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_CEILING);
+        }
     }
 }

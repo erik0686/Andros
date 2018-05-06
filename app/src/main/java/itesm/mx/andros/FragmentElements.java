@@ -289,26 +289,28 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         }
         else {
             int x, h, a, y, k, b, r;
-            if(tvX.getText().toString().equals("")) { x = 1;}
-                else if(tvX.getText().toString().equals("-")) {x = -1;}
-                else {x = Integer.parseInt(tvX.getText().toString());}
-            if(tvH.getText().toString().equals("")) { h = 0;} else {h = Integer.parseInt(tvH.getText().toString());}
-            if(tvA.getText().toString().equals("")) { a = 1;}
-                else {a = Integer.parseInt(tvA.getText().toString());}
-            if(tvY.getText().toString().equals("")) { y = 1;}
-                else if(tvY.getText().toString().equals("-")) {y = -1;}
-                else {y = Integer.parseInt(tvY.getText().toString());}
-            if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
-            if(tvB.getText().toString().equals("")) { b = 1;}
-             else {b = Integer.parseInt(tvB.getText().toString());}
+            if(tvX.getText().toString().equals("")) { x = 1; }
+                else if(tvX.getText().toString().equals("-")) {x = -1; }
+                else {x = Integer.parseInt(tvX.getText().toString()); }
+
+            if(tvH.getText().toString().equals("")) { h = 0; } else {h = Integer.parseInt(tvH.getText().toString()); }
+
+            if(tvA.getText().toString().equals("")) { a = 1; } else {a = Integer.parseInt(tvA.getText().toString()); }
+
+            if(tvY.getText().toString().equals("")) { y = 1; }
+                else if(tvY.getText().toString().equals("-")) {y = -1; }
+                else {y = Integer.parseInt(tvY.getText().toString()); }
+
+            if(tvK.getText().toString().equals("")) { k = 0; } else {k = Integer.parseInt(tvK.getText().toString()); }
+
+            if(tvB.getText().toString().equals("")) { b = 1; } else {b = Integer.parseInt(tvB.getText().toString()); }
+
             r = Integer.parseInt(tvR.getText().toString());
 
             Figura hyperbola = new Figura(x, y, h, k, r, a, b);
 
             tvRow1Answer.setText(hyperbola.getVertex());
-//            tvRow2Answer.setText(hyperbola.getFocusHiperbola());
-            tvRow3Answer.setText(hyperbola.getCenter());
-            tvRow4Answer.setText(String.valueOf(hyperbola.getLadoRecto()));
+            tvRow2Answer.setText(hyperbola.getCenterHiperbola());
         }
     }
 }
