@@ -120,10 +120,14 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                 break;
             case 3:
                 tvRow1.setText("Vértice: ");
-                tvRow2.setText("Foco: ");
-                tvRow3.setText("Centro: ");
-                tvRow3Answer.setHint("(x, y)");
-                tvRow4.setText("Lado Recto: ");
+                tvRow2.setText("Centro: ");
+                tvRow2Answer.setHint("(x, y)");
+
+                tvRow3.setVisibility(View.INVISIBLE);
+                tvRow3Answer.setVisibility(View.INVISIBLE);
+                tvRow4.setVisibility(View.INVISIBLE);
+                tvRow4Answer.setVisibility(View.INVISIBLE);
+
                 break;
         }
         tvRow5.setVisibility(View.INVISIBLE);
@@ -302,7 +306,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
             Figura hyperbola = new Figura(x, y, h, k, r, a, b);
 
             tvRow1Answer.setText(hyperbola.getVertex());
-            tvRow2Answer.setText(hyperbola.getFoco());
+//            tvRow2Answer.setText(hyperbola.getFocusHiperbola());
             tvRow3Answer.setText(hyperbola.getCenter());
             tvRow4Answer.setText(String.valueOf(hyperbola.getLadoRecto()));
         }
