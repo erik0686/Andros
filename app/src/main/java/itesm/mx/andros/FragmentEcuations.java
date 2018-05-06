@@ -22,8 +22,18 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     public int figSelected, eqExample;
     String[][] anCircleGen = {{"1", "1", "0", "1", "1", "0", "16"}, {"1", "1", "-1", "1", "1", "1", "4"},
             {"2", "1", "-3", "2", "1", "-5", "49"}, {"1", "1", "0", "1", "1", "-3", "100"}, {"4", "1", "-2", "4", "1", "-3", "1"}};
-    String[][] anCircleStan = {{"1", "1", "0", "0", "16", "0"}, {"1", "1", "-2", "2", "-2", "0"},
+    String[][] anCircleStan = {{"1", "1", "0", "0", "-16", "0"}, {"1", "1", "-2", "2", "-2", "0"},
             {"2", "2", "-12", "-20", "19", "0"}, {"1", "1", "0", "-6", "-91", "0"}, {"4", "4", "-16", "-24", "51", "0"}};
+    String[][] anElipseGen = {{"1", "0", "25", "1", "0", "16", "1"}, {/*Poner ejemplo sin fracciones*/},
+            {"1", "0", "4", "1", "0", "16", "1"}, {"1", "-2", "9", "1", "0", "16", "1"}, {/*Poner ejemplo sin fracciones*/}};
+    String[][] anElipseStan = {{"16", "25", "0", "0", "-400", "0"}, {/*Poner ejemplo sin fracciones*/},
+            {"4", "1", "0", "0", "-16", "0"}, {"16", "9", "-64", "0", "-80", "0" }, {/*Poner ejemplo sin fracciones*/}};
+    String[][] anParabolaGen = {{"1", "0", "1", "1", "0"}, {"1", "-1", "4", "1", "-1"}, {"1", "-6", "8", "1", "2"},
+            {"1", "2", "1", "1", "-3"}, {"1", "-6", "1", "9", "0"}};
+    String[][] anParabolaStan = {{"1", "0", "0", "-1", "0", "0"}, {"1", "0", "-2", "-4", "5", "0"},
+            {"1", "0", "-12", "-8", "20", "0"}, {"0", "1", "-1", "4", "7", "0"}, {"0", "1", "-9", "-12", "36", "0"}};
+    String[][] anHyperGen = {};
+    String[][] anHyperStan = {};
     int[] circleStan = {R.drawable.circuloestandar0, R.drawable.circuloestandar1,
             R.drawable.circuloestandar2, R.drawable.circuloestandar3, R.drawable.circuloestandar4};
     int[] circleGen = {R.drawable.circulogeneral0, R.drawable.circulogeneral1,
@@ -125,6 +135,8 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         typeSelected = i == 0 ? true : false;
         ivSolution.setImageDrawable(null);
+        tvResult.setText(R.string.EcuacionResultado);
+        tvResult.setTextColor(Color.parseColor("#808080"));
         selectEquation();
         displayEquation();
     }
