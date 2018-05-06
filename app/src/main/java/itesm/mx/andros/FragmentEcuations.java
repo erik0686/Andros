@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentEcuations extends Fragment implements View.OnClickListener, Spinner.OnItemSelectedListener{
     public boolean typeSelected = true;
@@ -73,6 +74,8 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         btnCalculate.setOnClickListener(this);
         btnSolution.setOnClickListener(this);
 
+        tvResult.setText(R.string.EcuacionResultado);
+
         spinnerEquation = view.findViewById(R.id.spinner_equationType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.spinner_equations_type, android.R.layout.simple_spinner_item);
@@ -105,6 +108,8 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
                 eqExample++;
                 if(eqExample == 5) { eqExample = 0; }
                 ivSolution.setImageDrawable(null);
+                tvResult.setText(R.string.EcuacionResultado);
+                tvResult.setTextColor(Color.parseColor("#808080"));
                 displayEquation();
                 break;
             case R.id.button_calcular:
@@ -135,6 +140,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         transaction.replace(R.id.display_equation, standardEquation, "FRAGMENT EQUATION" );
         standardEquation.figSelected = figSelected;
         standardEquation.typeEquation = typeSelected;
+        standardEquation.viewElements = false;
         transaction.commit();
     }
 
@@ -170,16 +176,32 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
 
     public void calculateCircleStan() {
         Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
+        String x, y, h, k, a, b, r;
+        tvA = fr.getView().findViewById(R.id.acircle_coeficiente);
         tvX = fr.getView().findViewById(R.id.x1_coeficiente);
         tvH = fr.getView().findViewById(R.id.x2_coeficiente);
+        tvB = fr.getView().findViewById(R.id.bcircle_coeficiente);
         tvY = fr.getView().findViewById(R.id.y1_coeficiente);
         tvK = fr.getView().findViewById(R.id.y2_coeficiente);
         tvR = fr.getView().findViewById(R.id.result);
-        String[] values = {"1", tvX.getText().toString(), tvH.getText().toString(), "1",
-                tvY.getText().toString(), tvK.getText().toString(), tvR.getText().toString()};
+        if(tvA.getText().toString().equals("")) { a = "1";} else {a = tvH.getText().toString();}
+        if(tvX.getText().toString().equals("")) { x = "1";}
+            else if(tvX.getText().toString().equals("-")) {x = "-1";}
+            else {x = tvX.getText().toString();}
+        if(tvH.getText().toString().equals("")) { h = "0";} else {h = tvH.getText().toString();}
+        if(tvB.getText().toString().equals("")) { b = "1";} else {b = tvH.getText().toString();}
+        if(tvY.getText().toString().equals("")) { y = "1";}
+            else if(tvY.getText().toString().equals("-")) {y = "-1";}
+            else {y = tvY.getText().toString();}
+        if(tvK.getText().toString().equals("")) { k = "0";} else {k = tvK.getText().toString();}
+        r = tvR.getText().toString();
+        String[] values = {a, x, h, b, y, k, r};
         int j = 0;
         for(int i = 0; i < 7; i++) {
             if (anCircleGen[eqExample][i].equals(values[i])) {
+                j++;
+            }
+            else if(values[i].equals("") && anCircleGen[eqExample][i].equals("0")){
                 j++;
             }
         }

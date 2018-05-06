@@ -18,6 +18,7 @@ import android.widget.TextView;
 public class StandardEquation extends Fragment {
     public int figSelected;
     public boolean typeEquation = true;
+    public boolean viewElements = true;
 
     public StandardEquation() {
     }
@@ -53,7 +54,12 @@ public class StandardEquation extends Fragment {
         if (typeEquation) {
             switch (figSelected) {
                 case 0:
-                    return R.layout.standard_circle;
+                    if (viewElements) {
+                        return R.layout.standard_circle;
+                    }
+                    else {
+                        return R.layout.standard_circle_equations;
+                    }
                 case 1:
                     return R.layout.standard_ellipse;
                 case 2:

@@ -92,6 +92,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         transaction.replace(R.id.display_equation, standardEquation, "FRAGMENT FORMULARIO" );
         standardEquation.figSelected = figSelected;
         standardEquation.typeEquation = figSelected == 3 ? false : true;
+        standardEquation.viewElements = true;
         transaction.commit();
     }
 
