@@ -1,6 +1,7 @@
 package itesm.mx.andros;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -66,6 +67,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         btnSolution = view.findViewById(R.id.button_solution);
         ivEquation = view.findViewById(R.id.image_equation);
         ivSolution = view.findViewById(R.id.image_solution);
+        tvResult = view.findViewById(R.id.text_respuesta);
 
         btnNew.setOnClickListener(this);
         btnCalculate.setOnClickListener(this);
@@ -127,10 +129,6 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
 
     }
 
-   /* void eqValues() {
-        anCircleGen =
-    }*/
-
     public void selectEquation(){
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         StandardEquation standardEquation= StandardEquation.newInstance();
@@ -177,5 +175,21 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         tvY = fr.getView().findViewById(R.id.y1_coeficiente);
         tvK = fr.getView().findViewById(R.id.y2_coeficiente);
         tvR = fr.getView().findViewById(R.id.result);
+        String[] values = {"1", tvX.getText().toString(), tvH.getText().toString(), "1",
+                tvY.getText().toString(), tvK.getText().toString(), tvR.getText().toString()};
+        int j = 0;
+        for(int i = 0; i < 7; i++) {
+            if (anCircleGen[eqExample][i].equals(values[i])) {
+                j++;
+            }
+        }
+        if (j == 7) {
+            tvResult.setText("Correcto");
+            tvResult.setTextColor(Color.parseColor("#00bd5c"));
+        }
+        else {
+            tvResult.setText("Incorrecto");
+            tvResult.setTextColor(Color.parseColor("#d71d37"));
+        }
     }
 }
