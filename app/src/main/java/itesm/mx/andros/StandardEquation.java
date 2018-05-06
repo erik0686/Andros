@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 public class StandardEquation extends Fragment {
     public int figSelected;
+    public boolean typeEquation = true;
 
     public StandardEquation() {
     }
@@ -49,16 +50,27 @@ public class StandardEquation extends Fragment {
     }
 
     public  int selectEquation() {
-        switch (figSelected) {
-            case 0:
-                return R.layout.standard_circle;
-            case 1:
-                return R.layout.standard_ellipse;
-            case 2:
-                return R.layout.standard_parabola;
-            case 3:
-                return R.layout.standard_hyperbola;
+        if (typeEquation) {
+            switch (figSelected) {
+                case 0:
+                    return R.layout.standard_circle;
+                case 1:
+                    return R.layout.standard_ellipse;
+                case 2:
+                    return R.layout.general_parabola;
+                case 3:
+                    return R.layout.standard_hyperbola;
+            }
         }
+        else {
+            switch (figSelected) {
+                case 2:
+                    return R.layout.standard_parabola;
+                default:
+                    return R.layout.general_equation;
+            }
+        }
+
         return 0;
     }
 }
