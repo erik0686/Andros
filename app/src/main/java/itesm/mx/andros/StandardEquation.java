@@ -69,12 +69,7 @@ public class StandardEquation extends Fragment {
             }
         }
         else {
-            switch (figSelected) {
-                case 2:
-                    return R.layout.standard_parabola;
-                default:
-                    return R.layout.general_equation;
-            }
+            return R.layout.general_equation;
         }
 
         return 0;
