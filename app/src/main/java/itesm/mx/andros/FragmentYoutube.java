@@ -41,7 +41,20 @@ public class FragmentYoutube extends Fragment {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
                 if (!wasRestored) {
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                    player.loadVideo("peST59FsIRA");
+                    switch (figSelected){
+                        case 0:
+                            player.cueVideo("u26rAiskl54");
+                            break;
+                        case 1:
+                            player.cueVideo("jVTZITljKUE");
+                            break;
+                        case 2:
+                            player.cueVideo("_YOPO4mtl_s");
+                            break;
+                        case 3:
+                            player.cueVideo("yBTdSYYUHow");
+                            break;
+                    }
                     player.play();
                 }
             }
