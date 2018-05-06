@@ -22,7 +22,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     public int figSelected, eqExample;
     String[][] anCircleGen = {{"1", "1", "0", "1", "1", "0", "16"}, {"1", "1", "-1", "1", "1", "1", "4"},
             {"2", "1", "-3", "2", "1", "-5", "49"}, {"1", "1", "0", "1", "1", "-3", "100"}, {"4", "1", "-2", "4", "1", "-3", "1"}};
-    String[][] anCircleStan = {{"1", "1", "0", "0", "16", "0"}, {"1", "1", "-2", "2", "-2", "0"},
+    String[][] anCircleStan = {{"1", "1", "0", "0", "-16", "0"}, {"1", "1", "-2", "2", "-2", "0"},
             {"2", "2", "-12", "-20", "19", "0"}, {"1", "1", "0", "-6", "-91", "0"}, {"4", "4", "-16", "-24", "51", "0"}};
     int[] circleStan = {R.drawable.circuloestandar0, R.drawable.circuloestandar1,
             R.drawable.circuloestandar2, R.drawable.circuloestandar3, R.drawable.circuloestandar4};
@@ -41,7 +41,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     int[] hyperbolaGen = {R.drawable.hiperbolageneral0, R.drawable.hiperbolageneral1,
             R.drawable.hiperbolageneral2, R.drawable.hiperbolageneral3, R.drawable.hiperbolageneral4};
     Button btnCalculate, btnNew, btnSolution;
-    TextView tvX, tvH, tvY, tvK, tvR, tvA, tvB, tvResult;
+    TextView tvX, tvH, tvY, tvK, tvR, tvA, tvB, tvC, tvD, tvE, tvResult;
     Spinner spinnerEquation;
     ImageView ivEquation, ivSolution;
 
@@ -112,7 +112,9 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
                 displayEquation();
                 break;
             case R.id.button_calcular:
-                if(figSelected == 0 && typeSelected) { calculateCircleStan(); }
+                if(figSelected == 0 && typeSelected) {calculateCircleStan(); }
+                else if(figSelected == 0 && !typeSelected) {calculateCircleGen(); }
+
                 break;
             case R.id.button_solution:
                 displaySolution();
@@ -205,6 +207,48 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
             }
         }
         if (j == 7) {
+            tvResult.setText("Correcto");
+            tvResult.setTextColor(Color.parseColor("#00bd5c"));
+        }
+        else {
+            tvResult.setText("Incorrecto");
+            tvResult.setTextColor(Color.parseColor("#d71d37"));
+        }
+    }
+
+
+    public void calculateCircleGen() {
+        Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
+        //String x, y, h, k, a, b, r;
+        String a, b, c, d, e, r;
+
+        tvA = fr.getView().findViewById(R.id.x1_coeficiente);
+        tvB = fr.getView().findViewById(R.id.y1_coeficiente);
+        tvC = fr.getView().findViewById(R.id.x2_coeficiente);
+        tvD = fr.getView().findViewById(R.id.y2_coeficiente);
+        tvE = fr.getView().findViewById(R.id.e_coeficient);
+        tvR = fr.getView().findViewById(R.id.result);
+
+
+        if(tvA.getText().toString().equals("")) { a = "1";} else {a = tvA.getText().toString();}
+        if(tvB.getText().toString().equals("")) { b = "1";} else {b = tvB.getText().toString();}
+        if(tvC.getText().toString().equals("")) { c = "1";} else {c = tvC.getText().toString();}
+        if(tvD.getText().toString().equals("")) { d = "1";} else {d = tvD.getText().toString();}
+        if(tvE.getText().toString().equals("")) { e = "0";} else {e = tvE.getText().toString();}
+        r = tvR.getText().toString();
+
+
+        String[] values = {a,b,c,d,e,r};
+        int j = 0;
+        for(int i = 0; i < 6; i++) {
+            if (anCircleStan[eqExample][i].equals(values[i])) {
+                j++;
+            }
+            else if(values[i].equals("") && anCircleStan[eqExample][i].equals("0")){
+                j++;
+            }
+        }
+        if (j == 6) {
             tvResult.setText("Correcto");
             tvResult.setTextColor(Color.parseColor("#00bd5c"));
         }
