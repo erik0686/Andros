@@ -72,6 +72,12 @@ public class Figura {
         return foco;
     }
 
+    public String getFocusHiperbola(){
+        String foco;
+        foco = "(" + String.valueOf(((h*-1)/(double)x)+sqrt(abs(abs(a)+abs(b)))) + ", " +(((k*-1)/(double)y)  ) + ")";
+        return foco;
+    }
+
 
     public double getDiameter(){
         return Math.sqrt(r)/x * 2;
