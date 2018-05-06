@@ -1,4 +1,4 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
@@ -7,71 +7,77 @@
     android:orientation="vertical"
     tools:context="itesm.mx.andros.SectionsActivity">
 
-    <LinearLayout
-        android:id="@+id/formulario"
+    <Spinner
+        android:id="@+id/spinner_equationType"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="45dp">
+    </Spinner>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:hint="@string/hintTransformarEcuaciones" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:orientation="vertical">
+    <ImageView
+        android:id="@+id/image_equation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    <FrameLayout
+        android:id="@+id/display_equation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
 
-            <Spinner
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="45dp">
-
-            </Spinner>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:textAlignment="center"
-                android:hint="@string/hintTransformarEcuaciones" />
-
-            <ImageView
-                android:id="@+id/display_equation2"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/hintTransformarEcuaciones"
-                android:text="@string/botonTransformarEcuacion"
-                android:textAlignment="center"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:hint="@string/hintTransformarEcuaciones"
-                android:textAlignment="center"
-                tools:text="@string/EcuacionResultado" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="@string/hintEcuacionConvertida"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-        </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/button_new"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Nueva Ecuación"
+            android:textAlignment="center"
+            android:textSize="6pt" />
+        <Button
+            android:id="@+id/button_calcular"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Calcular Respuesta"
+            android:textAlignment="center"
+            android:textSize="6pt" />
+        <Button
+            android:id="@+id/button_solution"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Mostrar Solución"
+            android:textAlignment="center"
+            android:textSize="6pt" />
     </LinearLayout>
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/hintTransformarEcuaciones"
+        android:textAlignment="center"
+        tools:text="@string/EcuacionResultado" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Solución"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="8pt" />
+    <ImageView
+        android:id="@+id/image_solution"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+</LinearLayout>
