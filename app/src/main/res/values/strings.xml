@@ -26,4 +26,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="spinner_equations_type">
+        <item>De General a Estándar</item>
+        <item>De Estándar a General</item>
+    </string-array>
+
 </resources>
