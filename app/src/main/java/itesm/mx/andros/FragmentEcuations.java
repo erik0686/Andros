@@ -27,8 +27,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     Spinner spinnerEquation;
     ImageView ivEquation, ivSolution;
 
-    public FragmentEcuations() {
-    }
+    public FragmentEcuations() {}
 
     public static FragmentEcuations newInstance(){
         return new FragmentEcuations();

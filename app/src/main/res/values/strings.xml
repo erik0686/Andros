@@ -32,4 +32,7 @@
         <item>De Estándar a General</item>
     </string-array>
 
+    <string name="player_error">Error initializing YouTube player: %s</string>
+
+
 </resources>
