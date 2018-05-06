@@ -62,7 +62,6 @@
         android:id="@+id/text_respuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hintTransformarEcuaciones"
         android:textAlignment="center"
         android:textSize="8pt"
         tools:text="@string/EcuacionResultado" />
