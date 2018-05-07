@@ -6,32 +6,34 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/menu_formulario"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/formula"
             android:title="Formulario" />
         <item
             android:id="@+id/menu_ejemplos"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/footsteps"
             android:title="Ejemplos Guiados" />
         <item
             android:id="@+id/menu_elementos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/chart"
             android:title="Elementos de Gráficas" />
         <item
             android:id="@+id/menu_transformar"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/transform"
             android:title="Transformar Ecuaciones" />
         <item
             android:id="@+id/menu_innovacion"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Innovación" />
+            android:icon="@drawable/ic_menu_slideshow"
+            android:iconTint="#FFFFFF"
+            android:title="Recursos Audiovisuales" />
     </group>
 
-    <item android:title="Acerca de">
+    <item
+        android:title="Acerca de">
         <menu>
             <item
                 android:id="@+id/menu_instrucciones"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Instrucciones" />
+                android:title="Instrucciones"
+                android:icon="@drawable/information"/>
         </menu>
     </item>
 
