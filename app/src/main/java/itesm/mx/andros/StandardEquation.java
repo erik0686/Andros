@@ -50,7 +50,7 @@ public class StandardEquation extends Fragment {
         super.onAttach(context);
     }
 
-    public  int selectEquation() {
+    public int selectEquation() {
         if (typeEquation) {
             switch (figSelected) {
                 case 0:
@@ -69,7 +69,12 @@ public class StandardEquation extends Fragment {
             }
         }
         else {
-            return R.layout.general_equation;
+            if(figSelected == 3){
+                return R.layout.general_hyperbola;
+            }
+            else {
+                return R.layout.general_equation;
+            }
         }
 
         return 0;
