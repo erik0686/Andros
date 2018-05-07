@@ -25,13 +25,13 @@ public class MenuSection extends Application {
         section = new Section(2, "Ejemplos Guiados", "Revisa algunos ejemplos con soluciones de las secciones cónicas.", 2);
         listaSections.add(section);
 
-        section = new Section(3, "Elementos de gráficas", "Identifica los elementos de una gráfica a partir de su ecuación.", 3);
+        section = new Section(3, "Elementos de gráficas", "Obtén los elementos de una gráfica a partir de su ecuación.", 3);
         listaSections.add(section);
 
-        section = new Section(4, "Transformar ecuaciones", "Transforma ecuaciones de su forma estandar a general y viceversa.", 4);
+        section = new Section(4, "Transformar ecuaciones", "Transforma ecuaciones de su forma estándar a general y viceversa.", 4);
         listaSections.add(section);
 
-        section = new Section(5, "Innovación", "Grafica tus propias ecuaciones en esta seccion de innovación.", 5);
+        section = new Section(5, "Recursos Audiovisuales", "Videos informativos que complementarán tu aprendizaje.", 5);
         listaSections.add(section);
 
         section = new Section(1, "Instrucciones", "Aprende a utilizar esta App.", 6);

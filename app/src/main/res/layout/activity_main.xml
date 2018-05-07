@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context="itesm.mx.andros.MainActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="70dp" />
+        android:layout_height="100dp"
+        android:src="@drawable/prepanet"/>
 
 
     <ListView

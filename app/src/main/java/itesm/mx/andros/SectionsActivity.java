@@ -19,7 +19,7 @@ import android.view.MenuItem;
 public class SectionsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private int numSection;
-    private String[] sFigures = {"Círculo", "Elipse", "Parábola", "Hipérbole"};
+    private String[] sFigures = {"Círculo", "Elipse", "Parábola", "Hipérbola"};
     private int[] sIcons = {R.drawable.circle, R.drawable.ellipse, R.drawable.parabola, R.drawable.hyperbola};
     private int figSelected = 0;
     private FloatingActionButton fab;
@@ -52,7 +52,7 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                     figSelected = 0;
                 }
                 fab.setImageResource(sIcons[figSelected]);
-                Snackbar.make(view, sFigures[figSelected], Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(view, sFigures[figSelected], Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 displaySection();
             }
         });
@@ -100,6 +100,12 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 break;
             case R.id.menu_elementos:
                 numSection = 2;
+                break;
+            case R.id.menu_transformar:
+                numSection = 3;
+                break;
+            case R.id.menu_innovacion:
+                numSection = 4;
                 break;
             case R.id.menu_instrucciones:
                 numSection = 5;

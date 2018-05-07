@@ -27,6 +27,7 @@ public class FragmentExamples extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().setTitle("Ejemplos Guiados");
         View view = inflater.inflate(R.layout.fragment_examples, container, false);
 
 //        lvExamples.setImageResource(R.drawable.formulas);

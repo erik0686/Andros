@@ -27,6 +27,7 @@ public class FragmentYoutube extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getActivity().setTitle("Recursos Audiovisuales");
         View rootView = inflater.inflate(R.layout.you_tube_api, container, false);
 
         YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();

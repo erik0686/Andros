@@ -23,6 +23,7 @@ public class FragmentInstrucciones extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getActivity().setTitle("Instrucciones");
         View view = inflater.inflate(R.layout.fragment_instructions, container, false);
 
         tvInstruccionesFormulario = view.findViewById(R.id.tituloFormulario);
@@ -44,10 +45,10 @@ public class FragmentInstrucciones extends Fragment {
         super.onStart();
 
         tvInstruccionesFormulario.setText("Formulario");
-        tvInstruccionesEjemplos.setText("Ejemplos");
-        tvInstruccionesElementos.setText("Elementos");
-        tvInstruccionesEcuaciones.setText("Ecuaciones");
-        tvInstruccionesInnovacion.setText("Innovacion");
+        tvInstruccionesEjemplos.setText("Ejemplos Guiados");
+        tvInstruccionesElementos.setText("Elementos de Gráfica");
+        tvInstruccionesEcuaciones.setText("Transformar Ecuaciones");
+        tvInstruccionesInnovacion.setText("Recursos Audiovisuales");
 
         tvInstruccionesTextoFormulario.setText(R.string.InstruccionesFormulario);
         tvInstruccionesTextoEjemplos.setText(R.string.InstruccionesEjemplos);

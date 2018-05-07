@@ -28,6 +28,7 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getActivity().setTitle("Elementos de Gráficas");
         View view = inflater.inflate(R.layout.fragment_elements, container, false);
         return view;
     }

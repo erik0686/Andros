@@ -66,6 +66,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getActivity().setTitle("Transformar Ecuaciones");
         View view = inflater.inflate(R.layout.fragment_ecuations, container, false);
         eqExample = 0;
         return view;
