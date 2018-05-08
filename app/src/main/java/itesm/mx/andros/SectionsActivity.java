@@ -24,9 +24,34 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
     private int figSelected = 0;
     private FloatingActionButton fab;
 
+
+    private static final String SELECTED_ITEM_POSITION = "ItemPosition";
+
+
+    @Override
+    protected void onSaveInstanceState(final Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Save the state of item position
+        outState.putInt(SELECTED_ITEM_POSITION, figSelected);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(final Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // Read the state of item position
+        figSelected = savedInstanceState.getInt(SELECTED_ITEM_POSITION);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(savedInstanceState != null){
+            figSelected = savedInstanceState.getInt(SELECTED_ITEM_POSITION);
+
+        }
+
         setContentView(R.layout.activity_sections);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
