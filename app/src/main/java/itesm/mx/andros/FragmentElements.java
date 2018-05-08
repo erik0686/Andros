@@ -123,9 +123,8 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                 break;
             case 3:
                 tvRow1.setText("Vértice: ");
-                tvRow2.setText("Centro: ");
-                tvRow2Answer.setHint("(x, y)");
-
+                tvRow2.setVisibility(View.INVISIBLE);
+                tvRow2Answer.setVisibility(View.INVISIBLE);
                 tvRow3.setVisibility(View.INVISIBLE);
                 tvRow3Answer.setVisibility(View.INVISIBLE);
                 tvRow4.setVisibility(View.INVISIBLE);
