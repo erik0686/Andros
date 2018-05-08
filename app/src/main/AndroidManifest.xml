@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@drawable/applogo"
         android:label="Prep@Net Cónicas"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
