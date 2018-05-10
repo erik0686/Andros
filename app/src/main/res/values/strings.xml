@@ -3,12 +3,12 @@
     <string name="title_activity_section">SectionActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="hintTransformarEcuaciones">Transformar ecuacion x a ecuación y</string>
+    <string name="hintTransformarEcuaciones">Transformar ecuación x a ecuación y</string>
     <string name="hintEcuacionConvertir">Ecuación a convertir</string>
     <string name="botonTransformarEcuacion">Transformar ecuación</string>
     <string name="hintEcuacionConvertida">Ecuación convertida</string>
     <string name="EcuacionResultado">Resultado:</string>
-    <string name="InstruccionesFormulario">En esta sección puedes encontrar las formulas que necesitarás a
+    <string name="InstruccionesFormulario">En esta sección puedes encontrar las fórmulas que necesitarás a
                 lo largo de esta aplicación. Encontrarás las fórmulas de un círculo, de un elipse,
                 de una hipérbola y parábolas horizontales y verticales. Así como la descripción de los
                 elementos que cada sección cónica tiene.  </string>
@@ -17,7 +17,7 @@
                 resto de las secciones de esta aplicación</string>
     <string name="InstruccionesElementos">En esta sección encontrarás ejercicios donde se te dará una ecuación de una sección
                 cónica, y tu tendrás que identificar los elementos que esta contiene, tales como: el foco, y los puntos importantes
-                de la grafica. </string>
+                de la gráfica. </string>
     <string name="InstruccionesEcuaciones">En esta sección encontrarás ejercicios donde se te dará una ecuación de una sección
                 cónica en su forma estándar o general y tu tendrás que transformarla a la otra. </string>
     <string name="InstruccionesInnovacion">En esta sección encontrarás videos informativos sobre cada sección cónica, para
