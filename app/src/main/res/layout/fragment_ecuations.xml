@@ -44,7 +44,7 @@
             android:textSize="6pt" />
         <Button
             android:id="@+id/button_calcular"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Calcular Respuesta"
             android:textAlignment="center"

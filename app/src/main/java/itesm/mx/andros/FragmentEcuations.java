@@ -206,17 +206,18 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         tvY = fr.getView().findViewById(R.id.y1_coeficiente);
         tvK = fr.getView().findViewById(R.id.y2_coeficiente);
         tvR = fr.getView().findViewById(R.id.result);
-        if(tvA.getText().toString().equals("")) { a = "1";} else {a = tvH.getText().toString();}
+        if(tvA.getText().toString().equals("")) { a = "1";} else {a = tvA.getText().toString();}
         if(tvX.getText().toString().equals("")) { x = "1";}
             else if(tvX.getText().toString().equals("-")) {x = "-1";}
             else {x = tvX.getText().toString();}
         if(tvH.getText().toString().equals("")) { h = "0";} else {h = tvH.getText().toString();}
-        if(tvB.getText().toString().equals("")) { b = "1";} else {b = tvH.getText().toString();}
+        if(tvB.getText().toString().equals("")) { b = "1";} else {b = tvB.getText().toString();}
         if(tvY.getText().toString().equals("")) { y = "1";}
             else if(tvY.getText().toString().equals("-")) {y = "-1";}
             else {y = tvY.getText().toString();}
         if(tvK.getText().toString().equals("")) { k = "0";} else {k = tvK.getText().toString();}
         r = tvR.getText().toString();
+
         String[] values = {a, x, h, b, y, k, r};
         int j = 0;
         for(int i = 0; i < 7; i++) {
