@@ -233,7 +233,9 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         Fragment fr = getChildFragmentManager().findFragmentById(R.id.display_equation);
         tvX = fr.getView().findViewById(R.id.x1_coeficiente);
         tvH = fr.getView().findViewById(R.id.x2_coeficiente);
-        tvK = fr.getView().findViewById(R.id.k_coeficiente);
+        tvY = fr.getView().findViewById(R.id.y1_coeficiente);
+        tvK = fr.getView().findViewById(R.id.y2_coeficiente);
+        tvA = fr.getView().findViewById(R.id.a_coeficient);
 
         if(tvX.getText().toString().equals("0")) {
             Toast.makeText(getContext(), "El coeficiente de X^2 debe ser diferente a 0", Toast.LENGTH_LONG).show();
@@ -241,8 +243,20 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
         else if (tvK.getText().toString().equals("-")){
             Toast.makeText(getContext(), "Valor inválido en K", Toast.LENGTH_LONG).show();
         }
+        else if (tvY.getText().toString().equals("-")){
+            Toast.makeText(getContext(), "Valor inválido en Y", Toast.LENGTH_LONG).show();
+        }
+        else if (tvY.getText().toString().equals("0")){
+            Toast.makeText(getContext(), "El valor de Y no puede ser 0", Toast.LENGTH_LONG).show();
+        }
+        else if (tvA.getText().toString().equals("-")){
+            Toast.makeText(getContext(), "Valor inválido en A", Toast.LENGTH_LONG).show();
+        }
+        else if (tvA.getText().toString().equals("0")){
+            Toast.makeText(getContext(), "El valor de A no puede ser 0", Toast.LENGTH_LONG).show();
+        }
         else {
-            int x, h, k;
+            int x, h, k, y, a;
 
             if(tvX.getText().toString().equals("")) { x = 1;}
                 else if(tvX.getText().toString().equals("-")) {x = -1;}
@@ -251,8 +265,13 @@ public class FragmentElements extends Fragment implements View.OnClickListener {
                 else if(tvH.getText().toString().equals("-")) {h = -1;}
                 else {h = Integer.parseInt(tvH.getText().toString());}
             if(tvK.getText().toString().equals("")) { k = 0;} else {k = Integer.parseInt(tvK.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;} else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvY.getText().toString().equals("")) { y = 1;} else {y = Integer.parseInt(tvY.getText().toString());}
+            if(tvA.getText().toString().equals("")) { y = 1;} else {y = Integer.parseInt(tvA.getText().toString());}
 
-            Figura parabola = new Figura(x, 0, h, k, 0, 0, 0);
+
+
+            Figura parabola = new Figura(x, y, h, k, 0, 0, 0);
 
             tvRow1Answer.setText(parabola.getVertexParabola());
             tvRow2Answer.setText(parabola.getFocusParabola());
