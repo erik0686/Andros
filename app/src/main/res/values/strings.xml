@@ -10,19 +10,21 @@
     <string name="EcuacionResultado">Resultado:</string>
     <string name="InstruccionesFormulario">En esta sección puedes encontrar las fórmulas que necesitarás a
                 lo largo de esta aplicación. Encontrarás las fórmulas de un círculo, de un elipse,
-                de una hipérbola y parábolas horizontales y verticales. Así como la descripción de los
+                de una hipérbola y parábolas. Así como la descripción de los
                 elementos que cada sección cónica tiene.  </string>
     <string name="InstruccionesEjemplos">En esta sección puedes encontrar ejemplos para cada sección cónica. Estos ejemplos
                 tienen su solución y explicación de las respuestas. Con ellos puedes darte una idea de como trabajarás en el
-                resto de las secciones de esta aplicación</string>
+                resto de las secciones de esta aplicación.</string>
     <string name="InstruccionesElementos">En esta sección encontrarás ejercicios donde se te dará una ecuación de una sección
-                cónica, y tu tendrás que identificar los elementos que esta contiene, tales como: el foco, y los puntos importantes
-                de la gráfica. </string>
+                cónica y tu tendrás que identificar los elementos que esta contiene, tales como: el foco, y los puntos importantes
+                de la grafica. </string>
     <string name="InstruccionesEcuaciones">En esta sección encontrarás ejercicios donde se te dará una ecuación de una sección
                 cónica en su forma estándar o general y tu tendrás que transformarla a la otra. </string>
     <string name="InstruccionesInnovacion">En esta sección encontrarás videos informativos sobre cada sección cónica, para
                 complementar tu aprendizaje y resolver cualquier duda.</string>
     <string name="title_activity_sections">SectionsActivity</string>
+    <string name="innovationTextView">En esta sección encontrarás algunos videos que pueden serte de
+        utilidad al aprender las secciones cónicas ¡Esperamos que te ayuden!</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

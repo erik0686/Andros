@@ -144,11 +144,13 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
 
     public void displaySection(){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        fab.setVisibility(View.VISIBLE);
         switch (numSection){
             case 0:
                 FragmentFormulario fragmentFormulario = FragmentFormulario.newInstance();
                 transaction.replace(R.id.content_sections, fragmentFormulario, "FRAGMENT FORMULARIO" );
                 transaction.commit();
+                fab.setVisibility(View.INVISIBLE);
                 break;
             case 1:
                 FragmentExamples fragmentExamples = FragmentExamples.newInstance();
@@ -178,6 +180,7 @@ public class SectionsActivity extends AppCompatActivity implements NavigationVie
                 FragmentInstrucciones fragmentInstrucciones = FragmentInstrucciones.newInstance();
                 transaction.replace(R.id.content_sections, fragmentInstrucciones, "FRAGMENT INSTRUCCIONES" );
                 transaction.commit();
+                fab.setVisibility(View.INVISIBLE);
                 break;
         }
         fab.setImageResource(sIcons[figSelected]);
