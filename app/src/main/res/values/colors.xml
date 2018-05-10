@@ -5,11 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlack">#000000</color>
     <array name="menuColors">
-        <item>#E8EAF6</item>
-        <item>#C5CAE8</item>
-        <item>#9EA8DB</item>
-        <item>#7986CC</item>
-        <item>#4A5CCC</item>
-        <item>#303E9F</item>
+        <item>#F0f2FF</item>
+        <item>#E2E6FF</item>
+        <item>#D4DAFF</item>
+        <item>#C6cEFF</item>
+        <item>#B8C2FF</item>
+        <item>#AAB6FF</item>
     </array>
 </resources>
