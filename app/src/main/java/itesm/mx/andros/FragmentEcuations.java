@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class FragmentEcuations extends Fragment implements View.OnClickListener, Spinner.OnItemSelectedListener{
     public boolean typeSelected = true;
     public int figSelected, eqExample;
@@ -57,6 +59,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
     TextView tvX, tvH, tvY, tvK, tvR, tvA, tvB, tvC, tvD, tvE, tvResult, tvSigno;
     Spinner spinnerEquation;
     ImageView ivEquation, ivSolution;
+    PhotoViewAttacher pvaEquation, pvaSolution;
 
     public FragmentEcuations() {}
 
@@ -100,6 +103,9 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
         ivSolution.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         displayEquation();
+
+        pvaEquation = new PhotoViewAttacher(ivEquation);
+        pvaSolution = new PhotoViewAttacher(ivSolution);
     }
 
     @Override
@@ -194,6 +200,7 @@ public class FragmentEcuations extends Fragment implements View.OnClickListener,
             else if (figSelected == 2) {ivSolution.setImageResource(parabolaStan[eqExample]);}
             else {ivSolution.setImageResource(hyperbolaStan[eqExample]);}
         }
+        pvaSolution.update();
     }
 
     public void calculateCircleStan() {

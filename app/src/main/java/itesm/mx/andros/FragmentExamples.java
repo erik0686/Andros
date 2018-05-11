@@ -63,8 +63,6 @@ public class FragmentExamples extends ListFragment {
 
                 ArrayAdapter<Integer> adapter_circulo = new ExamplesAdapter(getContext(), circleList, drawables_circulo);
                 setListAdapter(adapter_circulo);
-
-
                 break;
             case 1:
                 int[] drawables_elipse = new int[2];
