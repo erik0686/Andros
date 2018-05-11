@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 
 public class FragmentFormulario extends Fragment {
 
     ImageView Imagen_formulas;
+    PhotoViewAttacher pvaAttacher;
 
 
     public FragmentFormulario() {
@@ -28,6 +31,7 @@ public class FragmentFormulario extends Fragment {
 
         Imagen_formulas = view.findViewById(R.id.formulario);
         Imagen_formulas.setImageResource(R.drawable.formulas);
+        pvaAttacher = new PhotoViewAttacher(Imagen_formulas);
         return view;
     }
 }

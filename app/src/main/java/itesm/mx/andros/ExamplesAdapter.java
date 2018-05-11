@@ -9,11 +9,14 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 
 public class ExamplesAdapter extends ArrayAdapter<Integer> {
 
     ImageView ivExample;
     private int [] array_figuras;
+    public PhotoViewAttacher pvaAttacher;
 
     public ExamplesAdapter(Context context, ArrayList<Integer> examples, int[] int_array_drawable){
         super(context, 0, examples);
@@ -34,6 +37,8 @@ public class ExamplesAdapter extends ArrayAdapter<Integer> {
         ivExample = view.findViewById(R.id.row_example_image);
 
         ivExample.setImageResource(array_figuras[position]);
+
+        pvaAttacher = new PhotoViewAttacher(ivExample);
 
         return view;
     }
