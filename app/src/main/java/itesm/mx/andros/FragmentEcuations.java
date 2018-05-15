@@ -1,5 +1,7 @@
 package itesm.mx.andros;
 
+//This JAva class uses code from https://github.com/chrisbanes/PhotoView All credit from the code goes to its author.
+
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;

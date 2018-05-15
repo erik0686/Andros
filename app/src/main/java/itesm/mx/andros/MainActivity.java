@@ -1,4 +1,5 @@
 package itesm.mx.andros;
+//This JAva class uses code from https://github.com/chrisbanes/PhotoView All credit from the code goes to its author.
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
