@@ -1,51 +1,50 @@
-# PrepaTec Ecuaciones Conicas
+# Prepa Net Ecuaciones Cónicas
 
-This project will allow students from PrepaNet to learn and practice on conic ecuations such as circles, ellipses, hiperboles, and parabolas. It has a section with formulas, a section to practice transforming ecuations from general to standard form and viceversa. It also has excercises for identifying important elements of a conical ecuation. Lastly, it will allow you to graph a conic ecuation. 
-
-
-
-## Table of contents
-
-* [Da Team](#team)
-* [Management resources](#management-resources)
-* [Setup the project](#setup-the-project)
+### Objetivo
+Este proyecto permitirá a alumnos de PrepaNet a aprender y practicar en ecuaciones cónicas como círculos, elipses, hipérbolas y parábolas. Deberá ser una guía de apoyo para el estudiante, paralela a las lecciones que tenga en PrepaNet.
 
 
-### Da team 
-
-| Name  | Email | Role |
-| ------------- | ------------- | ------------- |
-| Erik Torres  | erik.torres.aguilar@gmail.com  | Development & Design |
-| Luis Carlos Figueroa  | lc.figueroar26@gmail.com  | Development & Design |
-| Daniel Zavala | dzavala94@gmail.com  | Development & Design |
-| Jose Luis Herrera  | -  | Development & Design |
-| Adrian Pineda  | -  | Development & Design |
-
-### Management tools
-
-You should ask for access to this tools if you don't have it already:
-
-* [Github repo](https://github.com/erik0686/Andros)
-
-## Development
-
-### Setup the project
-
-You might want to have Android Studio installed before you clone this repo. From there you should build the project and run.
-
-After installing please you can follow this simple steps:
-
-1. Clone this repository into your local machine
-
-```bash
-$ git clone https://github.com/erik0686/Andros.git
-```
-
-Or
-
-```bash
-$ git clone git@github.com:erik0686/Andros.git
-```
+### Descripción
+El proyecto consiste de una seccion de formulario, una sección de ejemplos guiados, una seccion de transformar ecuaciones de su forma general a estandar y viceversa. Una sección para obtener los elementos de una gráfica a partir de su ecuación. Una seccion de instrucciones y una seccion de recusrsos audiovisuales. 
 
 
-git@github.com:erik0686/Andros.git
+### Características generales
+La sección de formulario tiene las fórmulas que se utilizarán a lo largo de la aplicación. 
+La sección de ejemplos guiados tiene ejemplos específicos con instrucciones sobre como transformar las ecuaciones y como obtener sus elementos. 
+La seccion de transformar ecuaciones mostrarán una ecuación en la forma seleccionada, y será trabajo del alumno transformarla a la otra forma. Hay varios ejercicios para cada seccion cónica. 
+La seccion de recursos audiovisuales tienen videos que explican puntualmente cada ejercicio de las 4 secciones conicas, como apoyo para el alumno. Esta sección requiere tener internet.
+
+### Versión
+Versión: 1.0
+Fecha de última actualización: 22/05/2018
+
+### Desarrolladores:
+
+| Nombre  | Correo electrónico |
+| ------------- | ------------- |
+| Erik Torres  | erik.torres.aguilar@gmail.com  
+| Luis Carlos Figueroa  | lc.figueroar26@gmail.com  
+| Daniel Zavala | dzavala94@gmail.com  
+| Jose Luis Herrera  | -  |
+| Adrian Pineda  | -  |
+
+### Profesor:
+
+| Nombre  | Email |
+| ------------- | ------------- |
+| Ing. Martha Sordia Salinas | msordia@itesm.mx |
+
+### Cliente:
+
+| Nombre  | Email |
+| ------------- | ------------- |
+| Cesar Pérez | cesar_7539@hotmail.com  |
+
+### Institución
+
+Este proyecto es hecho para la clase de Proyecto de Desarrollo para Dispositivos Móviles- Versión Android.
+
+Universidad: ITESM
+Campus: Campus Monterrey
+
+
